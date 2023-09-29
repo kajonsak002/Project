@@ -65,6 +65,18 @@
     <Compile Include="Oil.Designer.cs">
       <DependentUpon>Oil.cs</DependentUpon>
     </Compile>
+    <Compile Include="OilFiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OilFiler.Designer.cs">
+      <DependentUpon>OilFiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OilPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OilPurchase.Designer.cs">
+      <DependentUpon>OilPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="OilSale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Oil.resx">
       <DependentUpon>Oil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OilFiler.resx">
+      <DependentUpon>OilFiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OilPurchase.resx">
+      <DependentUpon>OilPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OilSale.resx">
       <DependentUpon>OilSale.cs</DependentUpon>

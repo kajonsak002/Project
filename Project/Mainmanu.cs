@@ -44,5 +44,19 @@ namespace Project
             oiltank.MdiParent = this;
             oiltank.Show();
         }
+
+        private void จดการพนกงานToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OilFiler oilFiler = new OilFiler();
+            oilFiler.MdiParent = this;
+            oilFiler.Show();
+        }
+
+        private void การซอนำมนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OilPurchase oilPurchase = new OilPurchase();
+            oilPurchase.MdiParent = this;
+            oilPurchase.Show();
+        }
     }
 }
