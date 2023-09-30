@@ -64,11 +64,11 @@ namespace Project
             int rowsAffected = cmd.ExecuteNonQuery();
             if (rowsAffected > 0)
             {
-                MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                MessageBox.Show("ทำการสมัครสมาชิกสำเร็จ");
             }
             else
             {
-                MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                MessageBox.Show("ไม่สามารถทำการสมัครสมาชิกได้");
             }
             customerCode.Clear();
             customerName.Clear();

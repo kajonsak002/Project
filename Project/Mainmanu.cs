@@ -21,6 +21,7 @@ namespace Project
         { 
             registerMember registerMember = new registerMember();
             registerMember.MdiParent= this;
+            registerMember.WindowState = FormWindowState.Maximized;
             registerMember.Show();
         }
 
@@ -28,6 +29,7 @@ namespace Project
         {
             Oil oil = new Oil();
             oil.MdiParent = this;
+            oil.WindowState= FormWindowState.Maximized;
             oil.Show(); 
         }
 
@@ -35,6 +37,7 @@ namespace Project
         {
             OilSale oilsale = new OilSale();
             oilsale.MdiParent = this;
+            oilsale.WindowState = FormWindowState.Maximized;
             oilsale.Show();
         }
 
@@ -42,6 +45,7 @@ namespace Project
         {
             OilTank oiltank = new OilTank();
             oiltank.MdiParent = this;
+            oiltank.WindowState = FormWindowState.Maximized;
             oiltank.Show();
         }
 
@@ -49,6 +53,7 @@ namespace Project
         {
             OilFiler oilFiler = new OilFiler();
             oilFiler.MdiParent = this;
+            oilFiler.WindowState = FormWindowState.Maximized;
             oilFiler.Show();
         }
 
@@ -56,6 +61,7 @@ namespace Project
         {
             OilPurchase oilPurchase = new OilPurchase();
             oilPurchase.MdiParent = this;
+            oilPurchase.WindowState = FormWindowState.Maximized;
             oilPurchase.Show();
         }
     }

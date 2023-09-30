@@ -46,7 +46,7 @@
             this.หนาแรกToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1015, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,42 +66,42 @@
             // สมครสมาชกToolStripMenuItem
             // 
             this.สมครสมาชกToolStripMenuItem.Name = "สมครสมาชกToolStripMenuItem";
-            this.สมครสมาชกToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.สมครสมาชกToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.สมครสมาชกToolStripMenuItem.Text = "สมัครสมาชิก";
             this.สมครสมาชกToolStripMenuItem.Click += new System.EventHandler(this.สมครสมาชกToolStripMenuItem_Click);
             // 
             // จดการนำมนToolStripMenuItem
             // 
             this.จดการนำมนToolStripMenuItem.Name = "จดการนำมนToolStripMenuItem";
-            this.จดการนำมนToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.จดการนำมนToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.จดการนำมนToolStripMenuItem.Text = "จัดการน้ำมัน";
             this.จดการนำมนToolStripMenuItem.Click += new System.EventHandler(this.จดการนำมนToolStripMenuItem_Click);
             // 
             // การขายนำมนToolStripMenuItem
             // 
             this.การขายนำมนToolStripMenuItem.Name = "การขายนำมนToolStripMenuItem";
-            this.การขายนำมนToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.การขายนำมนToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.การขายนำมนToolStripMenuItem.Text = "การขายน้ำมัน";
             this.การขายนำมนToolStripMenuItem.Click += new System.EventHandler(this.การขายนำมนToolStripMenuItem_Click);
             // 
             // จดการแทงคนำมนToolStripMenuItem
             // 
             this.จดการแทงคนำมนToolStripMenuItem.Name = "จดการแทงคนำมนToolStripMenuItem";
-            this.จดการแทงคนำมนToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.จดการแทงคนำมนToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.จดการแทงคนำมนToolStripMenuItem.Text = "จัดการแทงค์น้ำมัน";
             this.จดการแทงคนำมนToolStripMenuItem.Click += new System.EventHandler(this.จดการแทงคนำมนToolStripMenuItem_Click);
             // 
             // จดการพนกงานToolStripMenuItem
             // 
             this.จดการพนกงานToolStripMenuItem.Name = "จดการพนกงานToolStripMenuItem";
-            this.จดการพนกงานToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.จดการพนกงานToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.จดการพนกงานToolStripMenuItem.Text = "จัดการพนักงาน";
             this.จดการพนกงานToolStripMenuItem.Click += new System.EventHandler(this.จดการพนกงานToolStripMenuItem_Click);
             // 
             // การซอนำมนToolStripMenuItem
             // 
             this.การซอนำมนToolStripMenuItem.Name = "การซอนำมนToolStripMenuItem";
-            this.การซอนำมนToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.การซอนำมนToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.การซอนำมนToolStripMenuItem.Text = "การซื้อน้ำมัน";
             this.การซอนำมนToolStripMenuItem.Click += new System.EventHandler(this.การซอนำมนToolStripMenuItem_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1015, 587);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

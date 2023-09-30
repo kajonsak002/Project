@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SaleDate = new System.Windows.Forms.DateTimePicker();
-            this.FillerID = new System.Windows.Forms.ComboBox();
+            this.FillerName = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,41 +39,56 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.SaleID = new System.Windows.Forms.TextBox();
-            this.MemberID = new System.Windows.Forms.TextBox();
             this.PricePerLiter = new System.Windows.Forms.TextBox();
-            this.DispenserID = new System.Windows.Forms.TextBox();
             this.LitersSold = new System.Windows.Forms.TextBox();
-            this.Tax = new System.Windows.Forms.TextBox();
             this.PaymentMethod = new System.Windows.Forms.ComboBox();
             this.New = new System.Windows.Forms.Button();
             this.Insert = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.FillerID = new System.Windows.Forms.TextBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.OilName = new System.Windows.Forms.ComboBox();
+            this.DispenserID = new System.Windows.Forms.TextBox();
+            this.MemberName = new System.Windows.Forms.ComboBox();
+            this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.MemberID = new System.Windows.Forms.TextBox();
+            this.SaleID = new System.Windows.Forms.TextBox();
+            this.Total = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Sum = new System.Windows.Forms.Button();
+            this.Tax = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // SaleDate
             // 
-            this.SaleDate.Location = new System.Drawing.Point(612, 17);
+            this.SaleDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.SaleDate.Location = new System.Drawing.Point(740, 22);
             this.SaleDate.Name = "SaleDate";
-            this.SaleDate.Size = new System.Drawing.Size(243, 22);
+            this.SaleDate.Size = new System.Drawing.Size(112, 22);
             this.SaleDate.TabIndex = 0;
+            this.SaleDate.Value = new System.DateTime(2023, 9, 30, 0, 0, 0, 0);
             // 
-            // FillerID
+            // FillerName
             // 
-            this.FillerID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.FillerID.FormattingEnabled = true;
-            this.FillerID.Location = new System.Drawing.Point(229, 362);
-            this.FillerID.Name = "FillerID";
-            this.FillerID.Size = new System.Drawing.Size(174, 36);
-            this.FillerID.TabIndex = 1;
+            this.FillerName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.FillerName.FormattingEnabled = true;
+            this.FillerName.Location = new System.Drawing.Point(320, 402);
+            this.FillerName.Name = "FillerName";
+            this.FillerName.Size = new System.Drawing.Size(174, 36);
+            this.FillerName.TabIndex = 1;
+            this.FillerName.SelectedIndexChanged += new System.EventHandler(this.FillerName_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.Location = new System.Drawing.Point(57, 302);
+            this.label1.Location = new System.Drawing.Point(57, 347);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 28);
             this.label1.TabIndex = 2;
@@ -142,27 +158,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label8.Location = new System.Drawing.Point(38, 365);
+            this.label8.Location = new System.Drawing.Point(38, 410);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(164, 28);
             this.label8.TabIndex = 9;
             this.label8.Text = "รหัสพนักงานเติมน้ำมัน";
-            // 
-            // SaleID
-            // 
-            this.SaleID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.SaleID.Location = new System.Drawing.Point(124, 8);
-            this.SaleID.Name = "SaleID";
-            this.SaleID.Size = new System.Drawing.Size(174, 36);
-            this.SaleID.TabIndex = 10;
-            // 
-            // MemberID
-            // 
-            this.MemberID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.MemberID.Location = new System.Drawing.Point(412, 8);
-            this.MemberID.Name = "MemberID";
-            this.MemberID.Size = new System.Drawing.Size(174, 36);
-            this.MemberID.TabIndex = 11;
             // 
             // PricePerLiter
             // 
@@ -172,14 +172,6 @@
             this.PricePerLiter.Size = new System.Drawing.Size(174, 36);
             this.PricePerLiter.TabIndex = 12;
             // 
-            // DispenserID
-            // 
-            this.DispenserID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.DispenserID.Location = new System.Drawing.Point(229, 85);
-            this.DispenserID.Name = "DispenserID";
-            this.DispenserID.Size = new System.Drawing.Size(174, 36);
-            this.DispenserID.TabIndex = 13;
-            // 
             // LitersSold
             // 
             this.LitersSold.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
@@ -187,14 +179,6 @@
             this.LitersSold.Name = "LitersSold";
             this.LitersSold.Size = new System.Drawing.Size(174, 36);
             this.LitersSold.TabIndex = 14;
-            // 
-            // Tax
-            // 
-            this.Tax.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Tax.Location = new System.Drawing.Point(229, 248);
-            this.Tax.Name = "Tax";
-            this.Tax.Size = new System.Drawing.Size(174, 36);
-            this.Tax.TabIndex = 16;
             // 
             // PaymentMethod
             // 
@@ -204,7 +188,7 @@
             "เงินสด",
             "บัตรเครดิต/เดบิต",
             "พร้อมเพย์"});
-            this.PaymentMethod.Location = new System.Drawing.Point(229, 307);
+            this.PaymentMethod.Location = new System.Drawing.Point(229, 352);
             this.PaymentMethod.Name = "PaymentMethod";
             this.PaymentMethod.Size = new System.Drawing.Size(174, 36);
             this.PaymentMethod.TabIndex = 17;
@@ -212,7 +196,7 @@
             // New
             // 
             this.New.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.New.Location = new System.Drawing.Point(482, 79);
+            this.New.Location = new System.Drawing.Point(740, 81);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(92, 47);
             this.New.TabIndex = 18;
@@ -222,7 +206,7 @@
             // Insert
             // 
             this.Insert.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Insert.Location = new System.Drawing.Point(482, 140);
+            this.Insert.Location = new System.Drawing.Point(740, 142);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(92, 47);
             this.Insert.TabIndex = 19;
@@ -233,7 +217,7 @@
             // Delete
             // 
             this.Delete.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Delete.Location = new System.Drawing.Point(482, 260);
+            this.Delete.Location = new System.Drawing.Point(740, 262);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(92, 47);
             this.Delete.TabIndex = 20;
@@ -243,7 +227,7 @@
             // Update
             // 
             this.Update.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Update.Location = new System.Drawing.Point(482, 198);
+            this.Update.Location = new System.Drawing.Point(740, 200);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(92, 47);
             this.Update.TabIndex = 21;
@@ -253,30 +237,125 @@
             // Close
             // 
             this.Close.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Close.Location = new System.Drawing.Point(482, 323);
+            this.Close.Location = new System.Drawing.Point(740, 325);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(92, 47);
             this.Close.TabIndex = 22;
             this.Close.Text = "Close";
             this.Close.UseVisualStyleBackColor = true;
             // 
+            // FillerID
+            // 
+            this.FillerID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.FillerID.Location = new System.Drawing.Point(229, 402);
+            this.FillerID.Name = "FillerID";
+            this.FillerID.Size = new System.Drawing.Size(68, 36);
+            this.FillerID.TabIndex = 23;
+            // 
+            // OilName
+            // 
+            this.OilName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.OilName.FormattingEnabled = true;
+            this.OilName.Location = new System.Drawing.Point(320, 77);
+            this.OilName.Name = "OilName";
+            this.OilName.Size = new System.Drawing.Size(174, 36);
+            this.OilName.TabIndex = 24;
+            this.OilName.SelectedIndexChanged += new System.EventHandler(this.OilName_SelectedIndexChanged);
+            // 
+            // DispenserID
+            // 
+            this.DispenserID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.DispenserID.Location = new System.Drawing.Point(230, 76);
+            this.DispenserID.Name = "DispenserID";
+            this.DispenserID.Size = new System.Drawing.Size(68, 36);
+            this.DispenserID.TabIndex = 25;
+            // 
+            // MemberName
+            // 
+            this.MemberName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.MemberName.FormattingEnabled = true;
+            this.MemberName.Location = new System.Drawing.Point(487, 11);
+            this.MemberName.Name = "MemberName";
+            this.MemberName.Size = new System.Drawing.Size(174, 36);
+            this.MemberName.TabIndex = 26;
+            this.MemberName.SelectedIndexChanged += new System.EventHandler(this.MemberName_SelectedIndexChanged);
+            // 
+            // MemberID
+            // 
+            this.MemberID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.MemberID.Location = new System.Drawing.Point(409, 11);
+            this.MemberID.Name = "MemberID";
+            this.MemberID.Size = new System.Drawing.Size(68, 36);
+            this.MemberID.TabIndex = 27;
+            // 
+            // SaleID
+            // 
+            this.SaleID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.SaleID.Location = new System.Drawing.Point(124, 18);
+            this.SaleID.Name = "SaleID";
+            this.SaleID.Size = new System.Drawing.Size(151, 36);
+            this.SaleID.TabIndex = 28;
+            // 
+            // Total
+            // 
+            this.Total.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Total.Location = new System.Drawing.Point(229, 297);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(174, 36);
+            this.Total.TabIndex = 30;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label9.Location = new System.Drawing.Point(92, 300);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(79, 28);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "มูลค่ารวม";
+            // 
+            // Sum
+            // 
+            this.Sum.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Sum.Location = new System.Drawing.Point(475, 286);
+            this.Sum.Name = "Sum";
+            this.Sum.Size = new System.Drawing.Size(92, 47);
+            this.Sum.TabIndex = 31;
+            this.Sum.Text = "Sum";
+            this.Sum.UseVisualStyleBackColor = true;
+            this.Sum.Click += new System.EventHandler(this.Sum_Click);
+            // 
+            // Tax
+            // 
+            this.Tax.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Tax.Location = new System.Drawing.Point(230, 248);
+            this.Tax.Name = "Tax";
+            this.Tax.Size = new System.Drawing.Size(174, 36);
+            this.Tax.TabIndex = 32;
+            // 
             // OilSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 450);
+            this.ClientSize = new System.Drawing.Size(995, 450);
+            this.Controls.Add(this.Tax);
+            this.Controls.Add(this.Sum);
+            this.Controls.Add(this.Total);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.SaleID);
+            this.Controls.Add(this.MemberID);
+            this.Controls.Add(this.MemberName);
+            this.Controls.Add(this.DispenserID);
+            this.Controls.Add(this.OilName);
+            this.Controls.Add(this.FillerID);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Insert);
             this.Controls.Add(this.New);
             this.Controls.Add(this.PaymentMethod);
-            this.Controls.Add(this.Tax);
             this.Controls.Add(this.LitersSold);
-            this.Controls.Add(this.DispenserID);
             this.Controls.Add(this.PricePerLiter);
-            this.Controls.Add(this.MemberID);
-            this.Controls.Add(this.SaleID);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -285,10 +364,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.FillerID);
+            this.Controls.Add(this.FillerName);
             this.Controls.Add(this.SaleDate);
             this.Name = "OilSale";
             this.Text = "OilSale";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,7 +379,7 @@
         #endregion
 
         private System.Windows.Forms.DateTimePicker SaleDate;
-        private System.Windows.Forms.ComboBox FillerID;
+        private System.Windows.Forms.ComboBox FillerName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -306,17 +388,26 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox SaleID;
-        private System.Windows.Forms.TextBox MemberID;
         private System.Windows.Forms.TextBox PricePerLiter;
-        private System.Windows.Forms.TextBox DispenserID;
         private System.Windows.Forms.TextBox LitersSold;
-        private System.Windows.Forms.TextBox Tax;
         private System.Windows.Forms.ComboBox PaymentMethod;
         private System.Windows.Forms.Button New;
         private System.Windows.Forms.Button Insert;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TextBox FillerID;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.ComboBox OilName;
+        private System.Windows.Forms.TextBox DispenserID;
+        private System.Windows.Forms.ComboBox MemberName;
+        private System.Windows.Forms.BindingSource bindingSource3;
+        private System.Windows.Forms.TextBox MemberID;
+        private System.Windows.Forms.TextBox SaleID;
+        private System.Windows.Forms.TextBox Total;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button Sum;
+        private System.Windows.Forms.TextBox Tax;
     }
 }
