@@ -40,7 +40,7 @@ namespace Project
         }
         private void showOilTank()
         {
-            cmd.CommandText = "select * from OilTank";
+            cmd.CommandText = "select OilTank.*,OilName from OilTank join Oil on OilTank.OilID = Oil.OilID";
             OdbcDataAdapter ad = new OdbcDataAdapter();
             ad.SelectCommand = cmd;
             DataTable table = new DataTable();

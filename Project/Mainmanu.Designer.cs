@@ -37,6 +37,7 @@
             this.จดการพนกงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.การซอนำมนToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.จดการหวจายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.รายงานการขายToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,10 +45,11 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.หนาแรกToolStripMenuItem});
+            this.หนาแรกToolStripMenuItem,
+            this.รายงานการขายToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1015, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1015, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,8 +64,8 @@
             this.การซอนำมนToolStripMenuItem,
             this.จดการหวจายToolStripMenuItem});
             this.หนาแรกToolStripMenuItem.Name = "หนาแรกToolStripMenuItem";
-            this.หนาแรกToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
-            this.หนาแรกToolStripMenuItem.Text = "หน้าแรก";
+            this.หนาแรกToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
+            this.หนาแรกToolStripMenuItem.Text = "จัดการ";
             // 
             // สมครสมาชกToolStripMenuItem
             // 
@@ -114,6 +116,13 @@
             this.จดการหวจายToolStripMenuItem.Text = "จัดการหัวจ่าย";
             this.จดการหวจายToolStripMenuItem.Click += new System.EventHandler(this.จดการหวจายToolStripMenuItem_Click);
             // 
+            // รายงานการขายToolStripMenuItem
+            // 
+            this.รายงานการขายToolStripMenuItem.Name = "รายงานการขายToolStripMenuItem";
+            this.รายงานการขายToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
+            this.รายงานการขายToolStripMenuItem.Text = "รายงานการขาย";
+            this.รายงานการขายToolStripMenuItem.Click += new System.EventHandler(this.รายงานการขายToolStripMenuItem_Click);
+            // 
             // Mainmanu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,5 +151,6 @@
         private System.Windows.Forms.ToolStripMenuItem จดการพนกงานToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem การซอนำมนToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem จดการหวจายToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem รายงานการขายToolStripMenuItem;
     }
 }

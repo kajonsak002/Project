@@ -53,6 +53,12 @@
     <Compile Include="Dispenser.Designer.cs">
       <DependentUpon>Dispenser.cs</DependentUpon>
     </Compile>
+    <Compile Include="การขายน้ำมัน.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="การขายน้ำมัน.Designer.cs">
+      <DependentUpon>การขายน้ำมัน.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mainmanu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="registerMember.resx">
       <DependentUpon>registerMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="การขายน้ำมัน.resx">
+      <DependentUpon>การขายน้ำมัน.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

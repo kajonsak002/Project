@@ -113,7 +113,7 @@
             // PhoneNumber
             // 
             this.PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.PhoneNumber.Location = new System.Drawing.Point(209, 176);
+            this.PhoneNumber.Location = new System.Drawing.Point(173, 178);
             this.PhoneNumber.Name = "PhoneNumber";
             this.PhoneNumber.Size = new System.Drawing.Size(192, 30);
             this.PhoneNumber.TabIndex = 32;
@@ -131,7 +131,7 @@
             // FillerName
             // 
             this.FillerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.FillerName.Location = new System.Drawing.Point(209, 130);
+            this.FillerName.Location = new System.Drawing.Point(173, 132);
             this.FillerName.Name = "FillerName";
             this.FillerName.Size = new System.Drawing.Size(192, 30);
             this.FillerName.TabIndex = 30;
@@ -149,7 +149,7 @@
             // FillerID
             // 
             this.FillerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.FillerID.Location = new System.Drawing.Point(209, 84);
+            this.FillerID.Location = new System.Drawing.Point(173, 86);
             this.FillerID.Name = "FillerID";
             this.FillerID.Size = new System.Drawing.Size(192, 30);
             this.FillerID.TabIndex = 28;
@@ -158,18 +158,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(425, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(371, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(305, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(475, 234);
             this.dataGridView1.TabIndex = 34;
             // 
             // OilFiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 374);
+            this.ClientSize = new System.Drawing.Size(858, 374);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PhoneNumber);
@@ -184,6 +184,7 @@
             this.Controls.Add(this.Insert);
             this.Name = "OilFiler";
             this.Text = "OilFiler";
+            this.Load += new System.EventHandler(this.OilFiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

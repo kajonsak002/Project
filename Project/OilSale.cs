@@ -99,8 +99,9 @@ namespace Project
         }
         private void Insert_Click(object sender, EventArgs e)
         {
-
-            cmd.CommandText = "insert into OilSale(SaleID,DispenserID,PricePerLiter,MemberID,LitersSold,SaleDate,Tax,PaymentMethod,FillerID) " +
+            if (checkOil(decimal.Parse(LitersSold.Text)))
+            {
+                cmd.CommandText = "insert into OilSale(SaleID,DispenserID,PricePerLiter,MemberID,LitersSold,SaleDate,Tax,PaymentMethod,FillerID) " +
                 "values('" + SaleID.Text + "','" + DispenserID.Text + "','" + PricePerLiter.Text + "','" + MemberID.Text + "','" + LitersSold.Text + "','" +
                 "" + String.Format("{0:yyyy-MM-dd}", SaleDate.Value) + "','"+Tax.Text+"','"+PaymentMethod.SelectedItem+"','"+FillerID.Text+"')";
             int rowsAffected = cmd.ExecuteNonQuery();
@@ -113,7 +114,22 @@ namespace Project
                 MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
             }
             addPoint(int.Parse(Total.Text));
-            deCapacity();
+            
+                deCapacity();
+            }
+            else { MessageBox.Show("จำนวนน้ำมันไม่เพียงพอ"); }
+            
+        }
+        private Boolean checkOil(decimal i)
+        {
+                cmd.CommandText = "select CurrentVolume from  OilTank  join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID= '"+DispenserID.Text+"'";
+                object rs = cmd.ExecuteScalar();
+                decimal currentCapacity = Convert.ToDecimal(rs);
+                if (i - currentCapacity > 0)
+                {
+                    return false; // ความจุไม่พอ
+                }else { return true; }
+
         }
         private void FillerName_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -140,15 +156,19 @@ namespace Project
         }
         private void setPrice()
         {
-            cmd.CommandText = "select PricePerLiter from Oil join OilTank on Oil.OilID = OilTank.OilID join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID='"+DispenserID.Text+"'";
-            OdbcDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            cmd.CommandText = "select PricePerLiter from Oil join OilTank on Oil.OilID = OilTank.OilID join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID='" + DispenserID.Text + "'";
+            object result = cmd.ExecuteScalar();
+            if (result != null)
             {
-                decimal pricePerLitter = reader.GetDecimal(0);
+                decimal pricePerLitter = Convert.ToDecimal(result);
                 PricePerLiter.Text = pricePerLitter.ToString();
             }
-            reader.Close();
+            else
+            {
+                PricePerLiter.Text = string.Empty;
+            }
         }
+
         private void addPoint(int price)
         {
             int point = 0;
@@ -208,7 +228,7 @@ namespace Project
                 while (rs.Read())
                 {
                     MemberName.Text = rs.GetString(0);
-                   // OilName.Text = rs.GetString(1);
+                   //OilName.Text = rs.GetString(1);
                     
                     LitersSold.Text = rs.GetString(3);
                     Tax.Text = rs.GetString(4);

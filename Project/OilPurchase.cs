@@ -40,7 +40,7 @@ namespace Project
         }
         private void showOilPurChase()
         {
-            cmd.CommandText = "select OilPurChase.*,CurrentVolume from OilPurchase join OilTank on OilPurchase.OilTankID = OilTank.TankID";
+            cmd.CommandText = "select OilPurChase.*,CurrentVolume,MaxCapacity from OilPurchase join OilTank on OilPurchase.OilTankID = OilTank.TankID";
             OdbcDataAdapter ad = new OdbcDataAdapter();
             ad.SelectCommand = cmd;
             DataTable table = new DataTable();
@@ -71,14 +71,15 @@ namespace Project
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "insert into OilPurchase(PurchaseID,OilVolumePurchased,PricePerLiter,PurchaseDate,OilTankID) values('" + PurchaseID.Text + "','" + OilVolumePurchase.Text + "','" + pricePerLiter.Text + "','"+ String.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value) + "','"+OilTankID.Text+"')";
+            if (checkMax(decimal.Parse(OilVolumePurchase.Text))) { 
+            cmd.CommandText = "insert into OilPurchase(PurchaseID,OilVolumePurchased,PricePerLiter,PurchaseDate,OilTankID) values('" + PurchaseID.Text + "','" + OilVolumePurchase.Text + "','" + pricePerLiter.Text + "','" + String.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value) + "','" + OilTankID.Text + "')";
             int rowsAffected = cmd.ExecuteNonQuery();
             if (rowsAffected > 0)
             {
                 MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-                
+
                 String sql = "update OilTank set CurrentVolume +='" + OilVolumePurchase.Text + "' where TankID = '" + OilTankID.Text + "'";
-                cmd.CommandText = "update OilTank set CurrentVolume +='"+OilVolumePurchase.Text+"' where TankID = '"+OilTankID.Text+"'";
+                cmd.CommandText = "update OilTank set CurrentVolume +='" + OilVolumePurchase.Text + "' where TankID = '" + OilTankID.Text + "'";
                 cmd.ExecuteNonQuery();
                 PurchaseID.Clear();
                 OilVolumePurchase.Clear();
@@ -89,11 +90,35 @@ namespace Project
             {
                 MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
             }
-            
+
             showOilPurChase();
+            }
+            else { MessageBox.Show("ความจุน้ำมันไม่พอจะรับ"); }
         }
-       
-   
+
+        private Boolean checkMax(decimal i)
+        {
+            cmd.CommandText = "select MaxCapacity,CurrentVolume from  OilTank   where TankID= '" + OilTankID.Text + "'";
+            using (OdbcDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    decimal currentCapacity = reader.GetDecimal(1); // ดึงค่า CurrentVolume
+                    decimal maxCapacity = reader.GetDecimal(0); // ดึงค่า MaxCapacity
+                    if (i + currentCapacity > maxCapacity)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false; // หากไม่พบข้อมูลในฐานข้อมูล
+        }
+
 
         private void Update_Click(object sender, EventArgs e)
         {

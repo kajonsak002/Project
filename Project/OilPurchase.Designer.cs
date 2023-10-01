@@ -44,6 +44,7 @@
             this.pricePerLiter = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
@@ -133,12 +134,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(498, 347);
+            this.dataGridView1.Size = new System.Drawing.Size(959, 347);
             this.dataGridView1.TabIndex = 31;
             // 
             // OilName
             // 
+            this.OilName.DropDownHeight = 200;
             this.OilName.FormattingEnabled = true;
+            this.OilName.IntegralHeight = false;
             this.OilName.Location = new System.Drawing.Point(298, 244);
             this.OilName.Name = "OilName";
             this.OilName.Size = new System.Drawing.Size(111, 24);
@@ -168,14 +171,24 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(316, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(93, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
             this.dateTimePicker1.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(257, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 16);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "วันที่";
             // 
             // OilPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(958, 450);
+            this.ClientSize = new System.Drawing.Size(1419, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pricePerLiter);
@@ -217,5 +230,6 @@
         private System.Windows.Forms.TextBox pricePerLiter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -70,6 +70,7 @@ namespace Project
             {
                 MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
             }
+            getOilFiller();
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace Project
             {
                 MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
             }
+            getOilFiller();
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -104,6 +106,7 @@ namespace Project
             {
                 MessageBox.Show("ไม่มีการแก้ไชข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
             }
+            getOilFiller();
         }
 
         private void FillerID_KeyDown(object sender, KeyEventArgs e)
@@ -119,6 +122,11 @@ namespace Project
                 }
                 rs.Close();
             }
+        }
+
+        private void OilFiler_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
