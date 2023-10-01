@@ -43,15 +43,20 @@
             this.oilId = new System.Windows.Forms.ComboBox();
             this.oil_id = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label1.Location = new System.Drawing.Point(83, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.Size = new System.Drawing.Size(119, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "รหัสแทงค์น้ำมัน";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -59,60 +64,69 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label2.Location = new System.Drawing.Point(83, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(105, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "ปริมาณสูงสุด";
             // 
             // oilTankId
             // 
-            this.oilTankId.Location = new System.Drawing.Point(180, 57);
+            this.oilTankId.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oilTankId.Location = new System.Drawing.Point(247, 57);
             this.oilTankId.Name = "oilTankId";
-            this.oilTankId.Size = new System.Drawing.Size(201, 22);
+            this.oilTankId.Size = new System.Drawing.Size(201, 36);
             this.oilTankId.TabIndex = 2;
+            this.oilTankId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.oilTankId_KeyDown);
+            this.oilTankId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.oilTankId_KeyPress);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label3.Location = new System.Drawing.Point(83, 184);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 16);
+            this.label3.Size = new System.Drawing.Size(120, 28);
             this.label3.TabIndex = 3;
             this.label3.Text = "ปริมาณคงเหลือ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label4.Location = new System.Drawing.Point(83, 246);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(54, 16);
+            this.label4.Size = new System.Drawing.Size(79, 28);
             this.label4.TabIndex = 4;
             this.label4.Text = "รหัสน้ำมัน";
             // 
             // oilTankCapacity
             // 
-            this.oilTankCapacity.Location = new System.Drawing.Point(180, 118);
+            this.oilTankCapacity.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oilTankCapacity.Location = new System.Drawing.Point(248, 118);
             this.oilTankCapacity.Name = "oilTankCapacity";
-            this.oilTankCapacity.Size = new System.Drawing.Size(201, 22);
+            this.oilTankCapacity.Size = new System.Drawing.Size(201, 36);
             this.oilTankCapacity.TabIndex = 2;
             // 
             // oilVolume
             // 
-            this.oilVolume.Location = new System.Drawing.Point(180, 184);
+            this.oilVolume.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oilVolume.Location = new System.Drawing.Point(248, 184);
             this.oilVolume.Name = "oilVolume";
-            this.oilVolume.Size = new System.Drawing.Size(201, 22);
+            this.oilVolume.Size = new System.Drawing.Size(201, 36);
             this.oilVolume.TabIndex = 2;
             // 
             // bDelete
             // 
-            this.bDelete.Location = new System.Drawing.Point(410, 319);
+            this.bDelete.Location = new System.Drawing.Point(397, 319);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(75, 23);
             this.bDelete.TabIndex = 13;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // bUpdate
             // 
@@ -122,6 +136,7 @@
             this.bUpdate.TabIndex = 12;
             this.bUpdate.Text = "Update";
             this.bUpdate.UseVisualStyleBackColor = true;
+            this.bUpdate.Click += new System.EventHandler(this.bUpdate_Click);
             // 
             // bInsert
             // 
@@ -147,24 +162,38 @@
             // 
             this.oilId.AutoCompleteCustomSource.AddRange(new string[] {
             ""});
+            this.oilId.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.oilId.FormattingEnabled = true;
-            this.oilId.Location = new System.Drawing.Point(272, 243);
+            this.oilId.Location = new System.Drawing.Point(328, 243);
             this.oilId.Name = "oilId";
-            this.oilId.Size = new System.Drawing.Size(121, 24);
+            this.oilId.Size = new System.Drawing.Size(121, 36);
             this.oilId.TabIndex = 14;
+            this.oilId.SelectedIndexChanged += new System.EventHandler(this.oilId_SelectedIndexChanged);
             // 
             // oil_id
             // 
-            this.oil_id.Location = new System.Drawing.Point(173, 243);
+            this.oil_id.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oil_id.Location = new System.Drawing.Point(247, 243);
             this.oil_id.Name = "oil_id";
-            this.oil_id.Size = new System.Drawing.Size(58, 22);
+            this.oil_id.Size = new System.Drawing.Size(58, 36);
             this.oil_id.TabIndex = 15;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(517, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(456, 272);
+            this.dataGridView1.TabIndex = 16;
             // 
             // OilTank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1056, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.oil_id);
             this.Controls.Add(this.oilId);
             this.Controls.Add(this.bDelete);
@@ -181,6 +210,8 @@
             this.Name = "OilTank";
             this.Text = "OilTank";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +233,7 @@
         private System.Windows.Forms.ComboBox oilId;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TextBox oil_id;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

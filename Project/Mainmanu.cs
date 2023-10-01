@@ -64,5 +64,13 @@ namespace Project
             oilPurchase.WindowState = FormWindowState.Maximized;
             oilPurchase.Show();
         }
+
+        private void จดการหวจายToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispenser oilPurchase = new Dispenser();
+            oilPurchase.MdiParent = this;
+            oilPurchase.WindowState = FormWindowState.Maximized;
+            oilPurchase.Show();
+        }
     }
 }

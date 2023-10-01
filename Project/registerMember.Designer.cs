@@ -104,7 +104,7 @@
             // Insert
             // 
             this.Insert.Font = new System.Drawing.Font("IBM Plex Sans Thai Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Insert.Location = new System.Drawing.Point(245, 365);
+            this.Insert.Location = new System.Drawing.Point(288, 394);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(99, 44);
             this.Insert.TabIndex = 6;
@@ -115,7 +115,7 @@
             // Update
             // 
             this.Update.Font = new System.Drawing.Font("IBM Plex Sans Thai Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Update.Location = new System.Drawing.Point(375, 365);
+            this.Update.Location = new System.Drawing.Point(418, 394);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(99, 44);
             this.Update.TabIndex = 7;
@@ -126,7 +126,7 @@
             // Delete
             // 
             this.Delete.Font = new System.Drawing.Font("IBM Plex Sans Thai Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Delete.Location = new System.Drawing.Point(510, 365);
+            this.Delete.Location = new System.Drawing.Point(553, 394);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(99, 44);
             this.Delete.TabIndex = 8;
@@ -137,7 +137,7 @@
             // Close
             // 
             this.Close.Font = new System.Drawing.Font("IBM Plex Sans Thai Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Close.Location = new System.Drawing.Point(635, 365);
+            this.Close.Location = new System.Drawing.Point(678, 394);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(99, 44);
             this.Close.TabIndex = 9;
@@ -148,7 +148,7 @@
             // New
             // 
             this.New.Font = new System.Drawing.Font("IBM Plex Sans Thai Light", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.New.Location = new System.Drawing.Point(112, 365);
+            this.New.Location = new System.Drawing.Point(155, 394);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(99, 44);
             this.New.TabIndex = 10;
@@ -163,14 +163,14 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(402, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(601, 297);
             this.dataGridView1.TabIndex = 11;
             // 
             // registerMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(999, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.New);
             this.Controls.Add(this.Close);

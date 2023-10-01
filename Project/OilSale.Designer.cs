@@ -60,6 +60,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.Sum = new System.Windows.Forms.Button();
             this.Tax = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
@@ -192,6 +195,7 @@
             this.PaymentMethod.Name = "PaymentMethod";
             this.PaymentMethod.Size = new System.Drawing.Size(174, 36);
             this.PaymentMethod.TabIndex = 17;
+            this.PaymentMethod.SelectedIndexChanged += new System.EventHandler(this.PaymentMethod_SelectedIndexChanged);
             // 
             // New
             // 
@@ -202,6 +206,7 @@
             this.New.TabIndex = 18;
             this.New.Text = "New";
             this.New.UseVisualStyleBackColor = true;
+            this.New.Click += new System.EventHandler(this.New_Click);
             // 
             // Insert
             // 
@@ -291,10 +296,11 @@
             // SaleID
             // 
             this.SaleID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.SaleID.Location = new System.Drawing.Point(124, 18);
+            this.SaleID.Location = new System.Drawing.Point(124, 7);
             this.SaleID.Name = "SaleID";
             this.SaleID.Size = new System.Drawing.Size(151, 36);
             this.SaleID.TabIndex = 28;
+            this.SaleID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SaleID_KeyDown);
             // 
             // Total
             // 
@@ -317,7 +323,7 @@
             // Sum
             // 
             this.Sum.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Sum.Location = new System.Drawing.Point(475, 286);
+            this.Sum.Location = new System.Drawing.Point(409, 291);
             this.Sum.Name = "Sum";
             this.Sum.Size = new System.Drawing.Size(92, 47);
             this.Sum.TabIndex = 31;
@@ -330,14 +336,47 @@
             this.Tax.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Tax.Location = new System.Drawing.Point(230, 248);
             this.Tax.Name = "Tax";
-            this.Tax.Size = new System.Drawing.Size(174, 36);
+            this.Tax.Size = new System.Drawing.Size(45, 36);
             this.Tax.TabIndex = 32;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label10.Location = new System.Drawing.Point(282, 252);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(71, 28);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "เปอร์เซ็น";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label11.Location = new System.Drawing.Point(409, 143);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 28);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "บาท";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label12.Location = new System.Drawing.Point(409, 203);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 28);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "ลิตร";
             // 
             // OilSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 450);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.Tax);
             this.Controls.Add(this.Sum);
             this.Controls.Add(this.Total);
@@ -409,5 +448,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button Sum;
         private System.Windows.Forms.TextBox Tax;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

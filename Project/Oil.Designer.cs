@@ -65,7 +65,7 @@
             // New
             // 
             this.New.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.New.Location = new System.Drawing.Point(16, 366);
+            this.New.Location = new System.Drawing.Point(18, 317);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(99, 44);
             this.New.TabIndex = 22;
@@ -76,7 +76,7 @@
             // Close
             // 
             this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Close.Location = new System.Drawing.Point(214, 437);
+            this.Close.Location = new System.Drawing.Point(216, 388);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(99, 44);
             this.Close.TabIndex = 21;
@@ -87,7 +87,7 @@
             // Delete
             // 
             this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Delete.Location = new System.Drawing.Point(89, 437);
+            this.Delete.Location = new System.Drawing.Point(91, 388);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(99, 44);
             this.Delete.TabIndex = 20;
@@ -98,7 +98,7 @@
             // Update
             // 
             this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Update.Location = new System.Drawing.Point(279, 366);
+            this.Update.Location = new System.Drawing.Point(281, 317);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(99, 44);
             this.Update.TabIndex = 19;
@@ -109,7 +109,7 @@
             // Insert
             // 
             this.Insert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Insert.Location = new System.Drawing.Point(149, 366);
+            this.Insert.Location = new System.Drawing.Point(151, 317);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(99, 44);
             this.Insert.TabIndex = 18;
@@ -176,7 +176,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label5.Location = new System.Drawing.Point(22, 203);
+            this.label5.Location = new System.Drawing.Point(22, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 25);
             this.label5.TabIndex = 27;
@@ -185,7 +185,7 @@
             // Density
             // 
             this.Density.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.Density.Location = new System.Drawing.Point(186, 196);
+            this.Density.Location = new System.Drawing.Point(186, 158);
             this.Density.Name = "Density";
             this.Density.Size = new System.Drawing.Size(192, 30);
             this.Density.TabIndex = 26;
@@ -194,7 +194,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label6.Location = new System.Drawing.Point(22, 249);
+            this.label6.Location = new System.Drawing.Point(22, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(128, 25);
             this.label6.TabIndex = 29;
@@ -203,7 +203,7 @@
             // ChemicalVolume
             // 
             this.ChemicalVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.ChemicalVolume.Location = new System.Drawing.Point(186, 242);
+            this.ChemicalVolume.Location = new System.Drawing.Point(186, 204);
             this.ChemicalVolume.Name = "ChemicalVolume";
             this.ChemicalVolume.Size = new System.Drawing.Size(192, 30);
             this.ChemicalVolume.TabIndex = 28;
@@ -212,7 +212,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label7.Location = new System.Drawing.Point(22, 295);
+            this.label7.Location = new System.Drawing.Point(22, 257);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 25);
             this.label7.TabIndex = 31;
@@ -221,7 +221,7 @@
             // DensityValues
             // 
             this.DensityValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.DensityValues.Location = new System.Drawing.Point(186, 288);
+            this.DensityValues.Location = new System.Drawing.Point(186, 250);
             this.DensityValues.Name = "DensityValues";
             this.DensityValues.Size = new System.Drawing.Size(192, 30);
             this.DensityValues.TabIndex = 30;

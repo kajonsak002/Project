@@ -75,6 +75,57 @@ namespace Project
                 }
             }
         }
+        public void InsertDispenser(string tankID, string dispenserID)
+        {
+            using (OdbcConnection connection = new OdbcConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "INSERT INTO Dispenser (DispenserID, OilTankID) VALUES (?, ?)";
+
+                using (OdbcCommand command = new OdbcCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("OilTankID", tankID);
+                    command.Parameters.AddWithValue("DispenserID", dispenserID);
+
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void UpdateDispenser(string tankID, string dispenserID)
+        {
+            using (OdbcConnection connection = new OdbcConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "UPDATE Dispenser SET OilTankID=? WHERE DispenserID = ?";
+
+                using (OdbcCommand command = new OdbcCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("OilTankID", tankID);
+                    command.Parameters.AddWithValue("DispenserID", dispenserID);
+
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void DeleteDispenser(string dispenserID)
+        {
+            using (OdbcConnection connection = new OdbcConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "DELETE FROM Dispenser WHERE DispenserID = ?";
+
+                using (OdbcCommand command = new OdbcCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("DispenserID", dispenserID);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
 
     }
 }

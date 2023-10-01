@@ -28,7 +28,7 @@ namespace Project
             getOilFiller();
             getDispender();
             getMember();
-            getPrice();
+            setPrice();
         }
 
         private void conDB()
@@ -100,7 +100,9 @@ namespace Project
         private void Insert_Click(object sender, EventArgs e)
         {
 
-            cmd.CommandText = "insert into OilSale(SaleID,DispenserID,PricePerLiter,MemberID,LitersSold,SaleDate) values('" + SaleID.Text + "','" + DispenserID.Text + "','" + PricePerLiter.Text + "','" + MemberID.Text + "','" + LitersSold.Text + "','"+String.Format("{0:d}", SaleDate.Value)+"'";
+            cmd.CommandText = "insert into OilSale(SaleID,DispenserID,PricePerLiter,MemberID,LitersSold,SaleDate,Tax,PaymentMethod,FillerID) " +
+                "values('" + SaleID.Text + "','" + DispenserID.Text + "','" + PricePerLiter.Text + "','" + MemberID.Text + "','" + LitersSold.Text + "','" +
+                "" + String.Format("{0:yyyy-MM-dd}", SaleDate.Value) + "','"+Tax.Text+"','"+PaymentMethod.SelectedItem+"','"+FillerID.Text+"')";
             int rowsAffected = cmd.ExecuteNonQuery();
             if (rowsAffected > 0)
             {
@@ -125,7 +127,8 @@ namespace Project
             if (OilName.SelectedIndex >= 0)
             {
                 DispenserID.Text = OilName.SelectedValue.ToString();
-                getPrice();
+                setPrice();
+                
             }
         }
         private void MemberName_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,8 +138,7 @@ namespace Project
                 MemberID.Text = MemberName.SelectedValue.ToString();
             }
         }
-
-        private void getPrice()
+        private void setPrice()
         {
             cmd.CommandText = "select PricePerLiter from Oil join OilTank on Oil.OilID = OilTank.OilID join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID='"+DispenserID.Text+"'";
             OdbcDataReader reader = cmd.ExecuteReader();
@@ -164,9 +166,8 @@ namespace Project
 
             cmd.CommandText = "update Member set MemberPoints+='" + point + "'where MemberID='" + MemberID.Text + "'";
             cmd.ExecuteNonQuery();
-
+            
         }
-
         private void Sum_Click(object sender, EventArgs e)
         {
             int tax = int.Parse(Tax.Text);
@@ -175,12 +176,48 @@ namespace Project
             double total = soldPrice * tax/100 + soldPrice;
             Total.Text = total.ToString();
         }
-
         private void deCapacity()
         {
             int lit = int.Parse(LitersSold.Text);
             cmd.CommandText = "update OilTank set CurrentVolume-='"+lit+"'from OilTank join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID='"+DispenserID.Text+"'";
             cmd.ExecuteNonQuery();
+        }
+        private void New_Click(object sender, EventArgs e)
+        {
+            runningSaaleID();
+            MemberName.SelectedIndex = 0;
+            OilName.SelectedIndex = 0;
+            PaymentMethod.SelectedIndex = 0;
+            FillerName.SelectedIndex = 0;
+            LitersSold.Clear();
+            Tax.Clear();
+            Total.Clear();
+        }
+
+        private void PaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaleID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmd.CommandText = "select MemberName,OilName,OilSale.PricePerLiter,LitersSold,Tax,PaymentMethod,FillerName from OilSale \r\njoin Member on OilSale.MemberID = Member.MemberID\r\njoin Dispenser on OilSale.DispenserID =Dispenser.DispenserID\r\njoin OilTank on Dispenser.OilTankID = OilTank.TankID\r\njoin Oil on Oil.OilID = OilTank.OilID\r\njoin OilFiller on OilSale.FillerID = OilFiller.FillerID\r\nwhere SaleID ='" + SaleID.Text + "'";
+                OdbcDataReader rs = cmd.ExecuteReader();
+                while (rs.Read())
+                {
+                    MemberName.Text = rs.GetString(0);
+                   // OilName.Text = rs.GetString(1);
+                    
+                    LitersSold.Text = rs.GetString(3);
+                    Tax.Text = rs.GetString(4);
+                    PaymentMethod.Text = rs.GetString(5);
+                    FillerName.Text = rs.GetString(6);
+
+                }
+                rs.Close();
+            }
         }
     }
 }

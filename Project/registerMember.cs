@@ -60,7 +60,7 @@ namespace Project
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "insert into Member(MemberID,MemberName,PhoneNumber) values('" + customerCode.Text + "','" + customerName.Text + "','" + customerTel.Text + "')";
+            cmd.CommandText = "insert into Member(MemberID,MemberName,PhoneNumber,MemberPoints) values('" + customerCode.Text + "','" + customerName.Text + "','" + customerTel.Text + "','"+0+"')";
             int rowsAffected = cmd.ExecuteNonQuery();
             if (rowsAffected > 0)
             {
