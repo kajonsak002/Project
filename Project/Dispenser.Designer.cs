@@ -49,43 +49,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label1.Location = new System.Drawing.Point(107, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(73, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "รหัสหัวจ่าย";
             // 
             // dispenserId
             // 
+            this.dispenserId.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.dispenserId.Location = new System.Drawing.Point(198, 99);
             this.dispenserId.Name = "dispenserId";
-            this.dispenserId.Size = new System.Drawing.Size(195, 22);
+            this.dispenserId.Size = new System.Drawing.Size(195, 30);
             this.dispenserId.TabIndex = 1;
             this.dispenserId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dispenserId_KeyDown);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label3.Location = new System.Drawing.Point(107, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 16);
+            this.label3.Size = new System.Drawing.Size(98, 23);
             this.label3.TabIndex = 4;
             this.label3.Text = "รหัสแทงค์น้ำมัน";
             // 
             // oilName
             // 
+            this.oilName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.oilName.FormattingEnabled = true;
             this.oilName.Location = new System.Drawing.Point(272, 156);
             this.oilName.Name = "oilName";
-            this.oilName.Size = new System.Drawing.Size(129, 24);
+            this.oilName.Size = new System.Drawing.Size(129, 31);
             this.oilName.TabIndex = 5;
             this.oilName.SelectedIndexChanged += new System.EventHandler(this.oilName_SelectedIndexChanged);
             // 
             // bNew
             // 
-            this.bNew.Location = new System.Drawing.Point(75, 262);
+            this.bNew.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.bNew.Location = new System.Drawing.Point(55, 262);
             this.bNew.Name = "bNew";
-            this.bNew.Size = new System.Drawing.Size(75, 23);
+            this.bNew.Size = new System.Drawing.Size(83, 55);
             this.bNew.TabIndex = 6;
             this.bNew.Text = "New";
             this.bNew.UseVisualStyleBackColor = true;
@@ -93,9 +98,10 @@
             // 
             // bInsert
             // 
-            this.bInsert.Location = new System.Drawing.Point(156, 262);
+            this.bInsert.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.bInsert.Location = new System.Drawing.Point(144, 262);
             this.bInsert.Name = "bInsert";
-            this.bInsert.Size = new System.Drawing.Size(75, 23);
+            this.bInsert.Size = new System.Drawing.Size(83, 55);
             this.bInsert.TabIndex = 7;
             this.bInsert.Text = "Insert";
             this.bInsert.UseVisualStyleBackColor = true;
@@ -103,9 +109,10 @@
             // 
             // bUpdate
             // 
-            this.bUpdate.Location = new System.Drawing.Point(237, 262);
+            this.bUpdate.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.bUpdate.Location = new System.Drawing.Point(233, 262);
             this.bUpdate.Name = "bUpdate";
-            this.bUpdate.Size = new System.Drawing.Size(75, 23);
+            this.bUpdate.Size = new System.Drawing.Size(83, 55);
             this.bUpdate.TabIndex = 8;
             this.bUpdate.Text = "Update";
             this.bUpdate.UseVisualStyleBackColor = true;
@@ -113,9 +120,10 @@
             // 
             // bDelete
             // 
-            this.bDelete.Location = new System.Drawing.Point(318, 262);
+            this.bDelete.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.bDelete.Location = new System.Drawing.Point(333, 262);
             this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(75, 23);
+            this.bDelete.Size = new System.Drawing.Size(83, 55);
             this.bDelete.TabIndex = 9;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
@@ -123,9 +131,10 @@
             // 
             // oilTankID
             // 
+            this.oilTankID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.oilTankID.Location = new System.Drawing.Point(207, 158);
             this.oilTankID.Name = "oilTankID";
-            this.oilTankID.Size = new System.Drawing.Size(59, 22);
+            this.oilTankID.Size = new System.Drawing.Size(59, 30);
             this.oilTankID.TabIndex = 10;
             // 
             // dataGridView1

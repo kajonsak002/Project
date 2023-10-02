@@ -64,7 +64,7 @@
             // 
             // New
             // 
-            this.New.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.New.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.New.Location = new System.Drawing.Point(18, 317);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(99, 44);
@@ -75,7 +75,7 @@
             // 
             // Close
             // 
-            this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Close.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.Close.Location = new System.Drawing.Point(216, 388);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(99, 44);
@@ -86,7 +86,7 @@
             // 
             // Delete
             // 
-            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Delete.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.Delete.Location = new System.Drawing.Point(91, 388);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(99, 44);
@@ -97,7 +97,7 @@
             // 
             // Update
             // 
-            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Update.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.Update.Location = new System.Drawing.Point(281, 317);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(99, 44);
@@ -108,7 +108,7 @@
             // 
             // Insert
             // 
-            this.Insert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Insert.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.Insert.Location = new System.Drawing.Point(151, 317);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(99, 44);
@@ -120,16 +120,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label3.Location = new System.Drawing.Point(22, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(81, 23);
             this.label3.TabIndex = 17;
             this.label3.Text = "ราคาต่อลิตร";
             // 
             // oilPrice
             // 
-            this.oilPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oilPrice.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.oilPrice.Location = new System.Drawing.Point(186, 104);
             this.oilPrice.Name = "oilPrice";
             this.oilPrice.Size = new System.Drawing.Size(192, 30);
@@ -138,16 +138,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label2.Location = new System.Drawing.Point(22, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 25);
+            this.label2.Size = new System.Drawing.Size(57, 23);
             this.label2.TabIndex = 15;
             this.label2.Text = "ชื่อน้ำมัน";
             // 
             // oilName
             // 
-            this.oilName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oilName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.oilName.Location = new System.Drawing.Point(186, 58);
             this.oilName.Name = "oilName";
             this.oilName.Size = new System.Drawing.Size(192, 30);
@@ -156,16 +156,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label1.Location = new System.Drawing.Point(22, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 25);
+            this.label1.Size = new System.Drawing.Size(65, 23);
             this.label1.TabIndex = 13;
             this.label1.Text = "รหัสน้ำมัน";
             // 
             // oilCode
             // 
-            this.oilCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.oilCode.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.oilCode.Location = new System.Drawing.Point(186, 12);
             this.oilCode.Name = "oilCode";
             this.oilCode.Size = new System.Drawing.Size(192, 30);
@@ -175,16 +175,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label5.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label5.Location = new System.Drawing.Point(22, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 25);
+            this.label5.Size = new System.Drawing.Size(83, 23);
             this.label5.TabIndex = 27;
             this.label5.Text = "ค่าความหนืด";
             // 
             // Density
             // 
-            this.Density.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Density.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.Density.Location = new System.Drawing.Point(186, 158);
             this.Density.Name = "Density";
             this.Density.Size = new System.Drawing.Size(192, 30);
@@ -193,16 +193,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label6.Location = new System.Drawing.Point(22, 211);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 25);
+            this.label6.Size = new System.Drawing.Size(109, 23);
             this.label6.TabIndex = 29;
             this.label6.Text = "ปริมาณสารตะกั่ว";
             // 
             // ChemicalVolume
             // 
-            this.ChemicalVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.ChemicalVolume.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.ChemicalVolume.Location = new System.Drawing.Point(186, 204);
             this.ChemicalVolume.Name = "ChemicalVolume";
             this.ChemicalVolume.Size = new System.Drawing.Size(192, 30);
@@ -211,16 +211,16 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label7.Location = new System.Drawing.Point(22, 257);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 25);
+            this.label7.Size = new System.Drawing.Size(105, 23);
             this.label7.TabIndex = 31;
             this.label7.Text = "ค่าความหนาแน่น";
             // 
             // DensityValues
             // 
-            this.DensityValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.DensityValues.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.DensityValues.Location = new System.Drawing.Point(186, 250);
             this.DensityValues.Name = "DensityValues";
             this.DensityValues.Size = new System.Drawing.Size(192, 30);

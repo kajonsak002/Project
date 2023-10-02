@@ -53,16 +53,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label3.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label3.Location = new System.Drawing.Point(58, 240);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 25);
+            this.label3.Size = new System.Drawing.Size(98, 23);
             this.label3.TabIndex = 23;
             this.label3.Text = "รหัสแทงค์น้ำมัน";
             // 
             // OilTankID
             // 
-            this.OilTankID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.OilTankID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.OilTankID.Location = new System.Drawing.Point(217, 240);
             this.OilTankID.Name = "OilTankID";
             this.OilTankID.Size = new System.Drawing.Size(57, 30);
@@ -71,16 +71,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label2.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label2.Location = new System.Drawing.Point(53, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 25);
+            this.label2.Size = new System.Drawing.Size(78, 23);
             this.label2.TabIndex = 21;
             this.label2.Text = "ปริมาณที่ซื้อ";
             // 
             // OilVolumePurchase
             // 
-            this.OilVolumePurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.OilVolumePurchase.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.OilVolumePurchase.Location = new System.Drawing.Point(217, 135);
             this.OilVolumePurchase.Name = "OilVolumePurchase";
             this.OilVolumePurchase.Size = new System.Drawing.Size(192, 30);
@@ -89,16 +89,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label1.Location = new System.Drawing.Point(53, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 25);
+            this.label1.Size = new System.Drawing.Size(98, 23);
             this.label1.TabIndex = 19;
             this.label1.Text = "เลขที่ใบซื้อน้ำมัน";
             // 
             // PurchaseID
             // 
-            this.PurchaseID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.PurchaseID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.PurchaseID.Location = new System.Drawing.Point(217, 89);
             this.PurchaseID.Name = "PurchaseID";
             this.PurchaseID.Size = new System.Drawing.Size(192, 30);
@@ -107,7 +107,7 @@
             // 
             // New
             // 
-            this.New.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.New.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.New.Location = new System.Drawing.Point(96, 318);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(99, 44);
@@ -118,7 +118,7 @@
             // 
             // Insert
             // 
-            this.Insert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.Insert.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.Insert.Location = new System.Drawing.Point(217, 318);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(99, 44);
@@ -140,27 +140,28 @@
             // OilName
             // 
             this.OilName.DropDownHeight = 200;
+            this.OilName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.OilName.FormattingEnabled = true;
             this.OilName.IntegralHeight = false;
             this.OilName.Location = new System.Drawing.Point(298, 244);
             this.OilName.Name = "OilName";
-            this.OilName.Size = new System.Drawing.Size(111, 24);
+            this.OilName.Size = new System.Drawing.Size(111, 31);
             this.OilName.TabIndex = 32;
             this.OilName.SelectedIndexChanged += new System.EventHandler(this.OilName_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label4.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label4.Location = new System.Drawing.Point(53, 189);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 25);
+            this.label4.Size = new System.Drawing.Size(81, 23);
             this.label4.TabIndex = 34;
             this.label4.Text = "ราคาต่อลิตร";
             // 
             // pricePerLiter
             // 
-            this.pricePerLiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.pricePerLiter.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.pricePerLiter.Location = new System.Drawing.Point(217, 182);
             this.pricePerLiter.Name = "pricePerLiter";
             this.pricePerLiter.Size = new System.Drawing.Size(192, 30);
@@ -168,18 +169,20 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(316, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(298, 13);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(108, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(108, 30);
             this.dateTimePicker1.TabIndex = 35;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.label5.Location = new System.Drawing.Point(257, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 16);
+            this.label5.Size = new System.Drawing.Size(34, 23);
             this.label5.TabIndex = 37;
             this.label5.Text = "วันที่";
             // 
