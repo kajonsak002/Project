@@ -69,10 +69,7 @@ namespace Project
 
         private void bNew_Click(object sender, EventArgs e)
         {
-            oilTankId.Clear();
-            oilTankCapacity.Clear();
-            oilVolume.Clear();
-            oilId.SelectedIndex = 0;
+            reset();
         }
 
         private void bInsert_Click(object sender, EventArgs e)
@@ -89,7 +86,9 @@ namespace Project
                 {
                     dbHelper.InsertOilTank(oilTankId.Text, oil_id.Text, oilTankCapacity.Text, oilVolume.Text);
                     showOilTank();
-                }catch(Exception ex) { MessageBox.Show("เกิดข้อผิดพลาด"); }
+                        reset();
+                    }
+                    catch(Exception ex) { MessageBox.Show("เกิดข้อผิดพลาด"); }
             }
             else
             {
@@ -97,13 +96,18 @@ namespace Project
             }
             }
         }
-
+        private void reset()
+        {
+            oilTankId.Clear();
+            oilTankCapacity.Clear();
+            oilVolume.Clear();
+            oilId.SelectedIndex = 0;
+        }
         private void oilId_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (oilId.SelectedIndex >= 0)
             {
                 oil_id.Text = oilId.SelectedValue.ToString();
-                
             }
     
         }
@@ -129,8 +133,12 @@ namespace Project
         {
             try
             {
-                dbHelper.DeleteOilTank(oilTankId.Text);
-                showOilTank();
+                DialogResult result = MessageBox.Show("คุณต้องลบข้อมูลหรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    dbHelper.DeleteOilTank(oilTankId.Text);
+                    showOilTank();
+                }
             }
             catch(Exception ex) {MessageBox.Show("เกิดข้อผิดพลาด"); }
         }
@@ -153,6 +161,16 @@ namespace Project
                     oilId.Text = rs.GetString(2);
                 }
                 rs.Close();
+            }
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+
             }
         }
     }

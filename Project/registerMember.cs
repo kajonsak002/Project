@@ -28,15 +28,19 @@ namespace Project
 
         private void runnigID()
         {
-            cmd.CommandText = "SELECT MAX(MemberID) FROM Member";
-            object result = cmd.ExecuteScalar();
-
-            if (result != DBNull.Value)
+            try
             {
-                int currentSaleID = Convert.ToInt32(result);
-                currentSaleID = currentSaleID + 1;
-                customerCode.Text = string.Format("{0:D5}",currentSaleID);
-            }
+                cmd.CommandText = "SELECT count(MemberID) FROM Member";
+                object result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value)
+                {
+                    int currentSaleID = Convert.ToInt32(result);
+                    currentSaleID = currentSaleID + 1;
+                    Console.WriteLine(currentSaleID);
+                    customerCode.Text = string.Format("{0:D5}", currentSaleID);
+                }
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         private void getMember()
         {
@@ -66,27 +70,50 @@ namespace Project
 
         private void New_Click(object sender, EventArgs e)
         {
+            reset();
+        }
+        private void reset()
+        {
             customerCode.Clear();
             customerName.Clear();
             customerTel.Clear();
+            runnigID();
         }
-
+        private Boolean checknull()
+        {
+            int c = 0;
+            if (customerCode.Text != ""){ c += 1; }
+            if (customerName.Text != "") { c += 1; }
+            if (customerTel.Text != "") { c += 1; }
+            if(c==3)
+            {
+                return true;
+            }
+            else { return false; }
+        }
         private void Insert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "insert into Member(MemberID,MemberName,PhoneNumber,MemberPoints) values('" + customerCode.Text + "','" + customerName.Text + "','" + customerTel.Text + "','"+0+"')";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("ทำการสมัครสมาชิกสำเร็จ");
-            }
-            else
-            {
-                MessageBox.Show("ไม่สามารถทำการสมัครสมาชิกได้");
-            }
-            customerCode.Clear();
-            customerName.Clear();
-            customerTel.Clear();
-            getMember();
+                if (checknull())
+                {
+                    cmd.CommandText = "insert into Member(MemberID,MemberName,PhoneNumber,MemberPoints) values('" + customerCode.Text + "','" + customerName.Text + "','" + customerTel.Text + "','" + 0 + "')";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("ทำการสมัครสมาชิกสำเร็จ");
+                        reset();
+                        getMember();
+                        runnigID();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่สามารถทำการสมัครสมาชิกได้");
+                    }
+                }
+                else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }   
+          
         }
 
     
@@ -112,35 +139,37 @@ namespace Project
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("การอัปเดตข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกอัปเดต");
+                reset();
+                getMember();
                 }
                 else
                 {
                     MessageBox.Show("ไม่มีการอัปเดตข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
                 }     
-                customerCode.Clear();
-                customerName.Clear();
-                customerTel.Clear();
-                getMember();
-
+              
 
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "delete Member where MemberID ='" + customerCode.Text+"'";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            if (MessageBox.Show("คุณต้องการลบข้อมูลหรือไม่หรือไม่?", "ยืนยันการปิดโปรแกรม", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกลบ");
+                try
+                {
+                    cmd.CommandText = "delete Member where MemberID ='" + customerCode.Text + "'";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกลบ");
+                        reset();
+                        getMember();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                    }
+                }catch (Exception ex) { MessageBox.Show(ex.Message); }  
             }
-            else
-            {
-                MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            customerCode.Clear();
-            customerName.Clear();
-            customerTel.Clear();
-            getMember();
         }
 
         private void Close_Click_1(object sender, EventArgs e)

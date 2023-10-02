@@ -48,7 +48,7 @@
             // 
             // New
             // 
-            this.New.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.New.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.New.Location = new System.Drawing.Point(76, 297);
             this.New.Name = "New";
             this.New.Size = new System.Drawing.Size(99, 44);
@@ -59,17 +59,20 @@
             // 
             // Close
             // 
-            this.Close.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.Close.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Close.ForeColor = System.Drawing.Color.IndianRed;
             this.Close.Location = new System.Drawing.Point(587, 297);
             this.Close.Name = "Close";
             this.Close.Size = new System.Drawing.Size(99, 44);
             this.Close.TabIndex = 26;
             this.Close.Text = "Close";
-            this.Close.UseVisualStyleBackColor = true;
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
             // 
             // Delete
             // 
-            this.Delete.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Delete.Location = new System.Drawing.Point(462, 297);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(99, 44);
@@ -80,7 +83,7 @@
             // 
             // Update
             // 
-            this.Update.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Update.Location = new System.Drawing.Point(339, 297);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(99, 44);
@@ -91,7 +94,7 @@
             // 
             // Insert
             // 
-            this.Insert.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.Insert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Insert.Location = new System.Drawing.Point(209, 297);
             this.Insert.Name = "Insert";
             this.Insert.Size = new System.Drawing.Size(99, 44);
@@ -103,55 +106,55 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label3.Location = new System.Drawing.Point(45, 179);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 23);
+            this.label3.Size = new System.Drawing.Size(80, 17);
             this.label3.TabIndex = 33;
             this.label3.Text = "เบอร์โทรศัพท์";
             // 
             // PhoneNumber
             // 
-            this.PhoneNumber.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.PhoneNumber.Location = new System.Drawing.Point(173, 178);
             this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Size = new System.Drawing.Size(192, 30);
+            this.PhoneNumber.Size = new System.Drawing.Size(192, 23);
             this.PhoneNumber.TabIndex = 32;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(45, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 23);
+            this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 31;
             this.label2.Text = "ชื่อพนักงาน";
             // 
             // FillerName
             // 
-            this.FillerName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.FillerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FillerName.Location = new System.Drawing.Point(173, 132);
             this.FillerName.Name = "FillerName";
-            this.FillerName.Size = new System.Drawing.Size(192, 30);
+            this.FillerName.Size = new System.Drawing.Size(192, 23);
             this.FillerName.TabIndex = 30;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label1.Location = new System.Drawing.Point(45, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 23);
+            this.label1.Size = new System.Drawing.Size(78, 17);
             this.label1.TabIndex = 29;
             this.label1.Text = "รหัสพนักงาน";
             // 
             // FillerID
             // 
-            this.FillerID.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
+            this.FillerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.FillerID.Location = new System.Drawing.Point(173, 86);
             this.FillerID.Name = "FillerID";
-            this.FillerID.Size = new System.Drawing.Size(192, 30);
+            this.FillerID.Size = new System.Drawing.Size(192, 23);
             this.FillerID.TabIndex = 28;
             this.FillerID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FillerID_KeyDown);
             // 

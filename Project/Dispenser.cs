@@ -41,6 +41,7 @@ namespace Project
         }
         private void showDispenser()
         {
+            
             cmd.CommandText = "select DispenserID,OilTankID,OilName from Dispenser join OilTank on Dispenser.OilTankID = OilTank.TankID join Oil on OilTank.OilID = Oil.OilID";
             OdbcDataAdapter ad = new OdbcDataAdapter();
             ad.SelectCommand = cmd;
@@ -52,16 +53,19 @@ namespace Project
 
         private void getOilTank()
         {
-            cmd.CommandText = "select TankID,TankID + OilName as TON from OilTank join Oil on OilTank.OilID = Oil.OilID";
-            OdbcDataAdapter ad = new OdbcDataAdapter();
-            ad.SelectCommand = cmd;
-            DataTable table = new DataTable();
-            ad.Fill(table);
-            bindingSource1.DataSource = table;
-            oilName.DataSource = bindingSource1;
-            oilName.DisplayMember = "TON";
-            oilName.ValueMember = "TankID";
-            oilTankID.Text = oilName.SelectedValue.ToString();
+            try
+            {
+                cmd.CommandText = "select TankID,TankID + OilName as TON from OilTank join Oil on OilTank.OilID = Oil.OilID";
+                OdbcDataAdapter ad = new OdbcDataAdapter();
+                ad.SelectCommand = cmd;
+                DataTable table = new DataTable();
+                ad.Fill(table);
+                bindingSource1.DataSource = table;
+                oilName.DataSource = bindingSource1;
+                oilName.DisplayMember = "TON";
+                oilName.ValueMember = "TankID";
+                oilTankID.Text = oilName.SelectedValue.ToString();
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
         private void Dispenser_Load(object sender, EventArgs e)
         {
@@ -77,14 +81,20 @@ namespace Project
 
         private void bInsert_Click(object sender, EventArgs e)
         {
-            if (dispenserId.Text != "")
+            try
             {
-                cmd.CommandText = "INSERT INTO Dispenser (DispenserID, OilTankID) VALUES ('" + dispenserId.Text + "','" + oilTankID.Text + "' )";
+                if (dispenserId.Text != "")
+                {
+                    cmd.CommandText = "INSERT INTO Dispenser (DispenserID, OilTankID) VALUES ('" + dispenserId.Text + "','" + oilTankID.Text + "' )";
 
-                cmd.ExecuteNonQuery();
-                showDispenser();
-            }
-            else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+                    cmd.ExecuteNonQuery();
+                    showDispenser();
+                    dispenserId.Clear();
+                    oilTankID.Clear();
+                    oilName.SelectedIndex = 0;
+                }
+                else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void oilName_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,14 +108,32 @@ namespace Project
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
-            dbHelper.UpdateDispenser(oilTankID.Text,dispenserId.Text);
-            showDispenser();
+            try
+            {
+                if (dispenserId.Text != "")
+                {
+                    dbHelper.UpdateDispenser(oilTankID.Text, dispenserId.Text);
+                    showDispenser();
+                }
+                else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void bDelete_Click(object sender, EventArgs e)
         {
-            dbHelper.DeleteDispenser(dispenserId.Text);
-            showDispenser();
+            try
+            {
+                if (dispenserId.Text != "") {
+                    DialogResult result = MessageBox.Show("คุณต้องการลบข้อมูลหรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        dbHelper.DeleteDispenser(dispenserId.Text);
+                        showDispenser();
+                    }
+                }
+                else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void dispenserId_KeyDown(object sender, KeyEventArgs e)
@@ -120,6 +148,17 @@ namespace Project
                 }
                 rs.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+
+            }
+         
         }
     }
 }

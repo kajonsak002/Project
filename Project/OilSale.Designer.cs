@@ -62,6 +62,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource3)).BeginInit();
@@ -74,7 +75,7 @@
             this.SaleDate.Name = "SaleDate";
             this.SaleDate.Size = new System.Drawing.Size(112, 22);
             this.SaleDate.TabIndex = 0;
-            this.SaleDate.Value = new System.DateTime(2023, 9, 30, 0, 0, 0, 0);
+            this.SaleDate.Value = new System.DateTime(2023, 10, 2, 0, 0, 0, 0);
             // 
             // FillerName
             // 
@@ -359,11 +360,25 @@
             this.label13.TabIndex = 36;
             this.label13.Text = "วันที่";
             // 
+            // Close
+            // 
+            this.Close.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Close.ForeColor = System.Drawing.Color.IndianRed;
+            this.Close.Location = new System.Drawing.Point(740, 369);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(92, 44);
+            this.Close.TabIndex = 41;
+            this.Close.Text = "Close";
+            this.Close.UseVisualStyleBackColor = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
             // OilSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 450);
+            this.Controls.Add(this.Close);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -439,5 +454,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button Close;
     }
 }

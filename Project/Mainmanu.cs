@@ -23,6 +23,7 @@ namespace Project
             registerMember.MdiParent= this;
             registerMember.WindowState = FormWindowState.Maximized;
             registerMember.Show();
+          
         }
 
         private void จดการนำมนToolStripMenuItem_Click(object sender, EventArgs e)
