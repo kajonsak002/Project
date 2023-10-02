@@ -239,5 +239,11 @@ namespace Project
                 rs.Close();
             }
         }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            cmd.CommandText = "update OilSale set PaymentMethod='" + PaymentMethod.SelectedItem + "'where SaleID='" + SaleID.Text + "'";
+            cmd.ExecuteNonQuery();
+        }
     }
 }

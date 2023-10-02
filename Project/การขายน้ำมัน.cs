@@ -29,7 +29,7 @@ namespace Project
             {
                 MessageBox.Show("เกิดข้อผิดพลากในการเชื่อมต่อฐานข้อมูล" + ex.Message);
             }
-            cmd.CommandText = "select SaleID,OilSale.MemberID,MemberName,LitersSold,SaleDate,PayMentmethod,OilFiller.FillerID,FillerName from OilSale join Member on OilSale.MemberID = Member.MemberID join OilFiller on OilSale.FillerID = OilFiller.FillerID";
+            cmd.CommandText = "select SaleID,OilSale.MemberID,MemberName,LitersSold,PricePerLiter,cast(LitersSold*PricePerLiter AS DECIMAL(10, 2)) as Amount,SaleDate,PayMentmethod,OilFiller.FillerID,FillerName from OilSale join Member on OilSale.MemberID = Member.MemberID join OilFiller on OilSale.FillerID = OilFiller.FillerID";
                 OdbcDataAdapter ad = new OdbcDataAdapter();
                 ad.SelectCommand = cmd;
                 DataTable table = new DataTable();

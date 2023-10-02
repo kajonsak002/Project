@@ -22,6 +22,7 @@ namespace Project
             conDB();
             showOilPurChase();
             getOil();
+            runnigID();
         }
 
         private void conDB()
@@ -36,6 +37,19 @@ namespace Project
             catch (Exception ex)
             {
                 MessageBox.Show("เกิดข้อผิดพลากในการเชื่อมต่อฐานข้อมูล" + ex.Message);
+            }
+        }
+
+        private void runnigID()
+        {
+            cmd.CommandText = "SELECT MAX(PurchaseID) FROM OilPurchase";
+            object result = cmd.ExecuteScalar();
+
+            if (result != DBNull.Value)
+            {
+                int currentSaleID = Convert.ToInt32(result);
+                currentSaleID = currentSaleID + 1;
+                PurchaseID.Text = currentSaleID.ToString();
             }
         }
         private void showOilPurChase()

@@ -23,8 +23,21 @@ namespace Project
             InitializeComponent();
             conDB();
             getMember();
+            runnigID();
         }
 
+        private void runnigID()
+        {
+            cmd.CommandText = "SELECT MAX(MemberID) FROM Member";
+            object result = cmd.ExecuteScalar();
+
+            if (result != DBNull.Value)
+            {
+                int currentSaleID = Convert.ToInt32(result);
+                currentSaleID = currentSaleID + 1;
+                customerCode.Text = currentSaleID.ToString();
+            }
+        }
         private void getMember()
         {
             cmd.CommandText = "select * from Member";

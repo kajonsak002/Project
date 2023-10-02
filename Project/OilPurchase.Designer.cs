@@ -45,6 +45,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
@@ -83,7 +85,7 @@
             this.OilVolumePurchase.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.OilVolumePurchase.Location = new System.Drawing.Point(217, 135);
             this.OilVolumePurchase.Name = "OilVolumePurchase";
-            this.OilVolumePurchase.Size = new System.Drawing.Size(192, 30);
+            this.OilVolumePurchase.Size = new System.Drawing.Size(74, 30);
             this.OilVolumePurchase.TabIndex = 20;
             // 
             // label1
@@ -143,7 +145,7 @@
             this.OilName.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.OilName.FormattingEnabled = true;
             this.OilName.IntegralHeight = false;
-            this.OilName.Location = new System.Drawing.Point(298, 244);
+            this.OilName.Location = new System.Drawing.Point(295, 240);
             this.OilName.Name = "OilName";
             this.OilName.Size = new System.Drawing.Size(111, 31);
             this.OilName.TabIndex = 32;
@@ -164,14 +166,14 @@
             this.pricePerLiter.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.pricePerLiter.Location = new System.Drawing.Point(217, 182);
             this.pricePerLiter.Name = "pricePerLiter";
-            this.pricePerLiter.Size = new System.Drawing.Size(192, 30);
+            this.pricePerLiter.Size = new System.Drawing.Size(74, 30);
             this.pricePerLiter.TabIndex = 33;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(298, 13);
+            this.dateTimePicker1.Location = new System.Drawing.Point(60, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(108, 30);
             this.dateTimePicker1.TabIndex = 35;
@@ -180,17 +182,39 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("IBM Plex Sans Thai", 8.25F);
-            this.label5.Location = new System.Drawing.Point(257, 18);
+            this.label5.Location = new System.Drawing.Point(12, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 23);
             this.label5.TabIndex = 37;
             this.label5.Text = "วันที่";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label12.Location = new System.Drawing.Point(297, 136);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 28);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "ลิตร";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("IBM Plex Sans Thai", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.Location = new System.Drawing.Point(297, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 28);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "บาท";
             // 
             // OilPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1419, 450);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
@@ -234,5 +258,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label6;
     }
 }
