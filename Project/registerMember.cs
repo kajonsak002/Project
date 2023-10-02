@@ -127,7 +127,7 @@ namespace Project
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "delete Member where MemberID =" + customerCode.Text;
+            cmd.CommandText = "delete Member where MemberID ='" + customerCode.Text+"'";
             int rowsAffected = cmd.ExecuteNonQuery();
             if (rowsAffected > 0)
             {

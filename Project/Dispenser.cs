@@ -52,14 +52,14 @@ namespace Project
 
         private void getOilTank()
         {
-            cmd.CommandText = "select TankID,OilName from OilTank join Oil on OilTank.OilID = Oil.OilID";
+            cmd.CommandText = "select TankID,TankID + OilName as TON from OilTank join Oil on OilTank.OilID = Oil.OilID";
             OdbcDataAdapter ad = new OdbcDataAdapter();
             ad.SelectCommand = cmd;
             DataTable table = new DataTable();
             ad.Fill(table);
             bindingSource1.DataSource = table;
             oilName.DataSource = bindingSource1;
-            oilName.DisplayMember = "OilName";
+            oilName.DisplayMember = "TON";
             oilName.ValueMember = "TankID";
             oilTankID.Text = oilName.SelectedValue.ToString();
         }
@@ -77,10 +77,14 @@ namespace Project
 
         private void bInsert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "INSERT INTO Dispenser (DispenserID, OilTankID) VALUES ('" + dispenserId.Text + "','" + oilTankID.Text + "' )";
+            if (dispenserId.Text != "")
+            {
+                cmd.CommandText = "INSERT INTO Dispenser (DispenserID, OilTankID) VALUES ('" + dispenserId.Text + "','" + oilTankID.Text + "' )";
 
-            cmd.ExecuteNonQuery();
-            showDispenser();
+                cmd.ExecuteNonQuery();
+                showDispenser();
+            }
+            else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
         }
 
         private void oilName_SelectedIndexChanged(object sender, EventArgs e)

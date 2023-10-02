@@ -77,9 +77,25 @@ namespace Project
 
         private void bInsert_Click(object sender, EventArgs e)
         {
-            dbHelper.InsertOilTank(oilTankId.Text, oil_id.Text,oilTankCapacity.Text,oilVolume.Text);
-            showOilTank();
+            if (oilTankCapacity.Text != "" | oilVolume.Text!= "")
+            {
+                decimal M = decimal.Parse(oilTankCapacity.Text);
+                decimal V = decimal.Parse(oilTankCapacity.Text);
             
+
+            if (M>V)
+            {
+                try
+                {
+                    dbHelper.InsertOilTank(oilTankId.Text, oil_id.Text, oilTankCapacity.Text, oilVolume.Text);
+                    showOilTank();
+                }catch(Exception ex) { MessageBox.Show("เกิดข้อผิดพลาด"); }
+            }
+            else
+            {
+                MessageBox.Show("ค่าน้ำมันเกินความจุสูงสุด");
+            }
+            }
         }
 
         private void oilId_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,14 +110,29 @@ namespace Project
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
-            dbHelper.UpdateOilTank(oilTankId.Text,oil_id.Text,oilTankCapacity.Text,oilVolume.Text);
-            showOilTank();
+            if (oilTankCapacity.Text != "" | oilVolume.Text != "")
+            {
+                decimal M = decimal.Parse(oilTankCapacity.Text);
+                decimal V = decimal.Parse(oilTankCapacity.Text);
+
+
+                if (M > V)
+                {
+                    dbHelper.UpdateOilTank(oilTankId.Text, oil_id.Text, oilTankCapacity.Text, oilVolume.Text);
+                    showOilTank();
+                }
+                else { MessageBox.Show("ค่าน้ำมันเกินความจุสูงสุด"); }
+            }
         }
 
         private void bDelete_Click(object sender, EventArgs e)
         {
-            dbHelper.DeleteOilTank(oilTankId.Text);
-            showOilTank();
+            try
+            {
+                dbHelper.DeleteOilTank(oilTankId.Text);
+                showOilTank();
+            }
+            catch(Exception ex) {MessageBox.Show("เกิดข้อผิดพลาด"); }
         }
 
         private void oilTankId_KeyPress(object sender, KeyPressEventArgs e)

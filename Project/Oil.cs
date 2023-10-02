@@ -54,36 +54,41 @@ namespace Project
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "insert into Oil(OilID,OilName,PricePerLiter,Density,ChemicalVolume,DensityValue) " +
-                "values('" + oilCode.Text + "','" + oilName.Text + "','" + oilPrice.Text + "'," +
-                "'"+Density.Text+"','"+ChemicalVolume.Text+"','"+DensityValues.Text+"')";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            oilCode.Clear();
-            oilName.Clear();    
-            oilPrice.Clear();
-          
-            Density.Clear();
-            ChemicalVolume.Clear();
-            DensityValues.Clear();
-            OilInventoly();
+                cmd.CommandText = "insert into Oil(OilID,OilName,PricePerLiter,Density,ChemicalVolume,DensityValue) " +
+                    "values('" + oilCode.Text + "','" + oilName.Text + "','" + oilPrice.Text + "'," +
+                    "'" + Density.Text + "','" + ChemicalVolume.Text + "','" + DensityValues.Text + "')";
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                }
+                else
+                {
+                    MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                }
+                oilCode.Clear();
+                oilName.Clear();
+                oilPrice.Clear();
+
+                Density.Clear();
+                ChemicalVolume.Clear();
+                DensityValues.Clear();
+                OilInventoly();
+            }catch(Exception ex) {MessageBox.Show("เกิดข้อผิดพลาดหรือ กรอกข้อมูลไม่ครบ"); }
         }
 
         private void Update_Click(object sender, EventArgs e)
         {
+            try
+            {
                 cmd.CommandText = "update Oil set OilID='" + oilCode.Text + "',OilName='" + oilName.Text + "' , " +
-                "PricePerLiter='" + oilPrice.Text+"'," +
+                "PricePerLiter='" + oilPrice.Text + "'," +
                 //"OilVolume='"+oilVolume.Text+"'," +
-                "Density='"+Density.Text+"'," +
-                "ChemicalVolume='" + ChemicalVolume.Text+"'," +
-                "DensityValue='" + DensityValues.Text+"'where OilId='" + oilCode.Text + "'";
+                "Density='" + Density.Text + "'," +
+                "ChemicalVolume='" + ChemicalVolume.Text + "'," +
+                "DensityValue='" + DensityValues.Text + "'where OilId='" + oilCode.Text + "'";
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
@@ -96,33 +101,37 @@ namespace Project
                 oilCode.Clear();
                 oilName.Clear();
                 oilPrice.Clear();
-               // oilVolume.Clear();
+                // oilVolume.Clear();
                 Density.Clear();
                 ChemicalVolume.Clear();
                 DensityValues.Clear();
                 OilInventoly();
+            }catch(Exception ex) {MessageBox.Show("เกิดข้อผิดพลาด หรือกรอกข้อมูลไม่ครบ"); }
             }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "delete Oil where OilID =" + oilCode.Text;
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกลบ");
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            oilCode.Clear();
-            oilName.Clear();
-            oilPrice.Clear();
-            //oilVolume.Clear();
-            Density.Clear();
-            ChemicalVolume.Clear();
-            DensityValues.Clear();
-            OilInventoly();
+                cmd.CommandText = "delete Oil where OilID =" + oilCode.Text;
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกลบ");
+                }
+                else
+                {
+                    MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                }
+                oilCode.Clear();
+                oilName.Clear();
+                oilPrice.Clear();
+                //oilVolume.Clear();
+                Density.Clear();
+                ChemicalVolume.Clear();
+                DensityValues.Clear();
+                OilInventoly();
+            }catch(Exception ex) { MessageBox.Show("เกิดข้อผิดพลาดหรือ ไม่ได้กรอกข้อมูล"); }
         }
 
         private void Close_Click(object sender, EventArgs e)

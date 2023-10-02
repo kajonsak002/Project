@@ -57,56 +57,69 @@ namespace Project
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "insert into OilFiller(FillerID,FillerName,PhoneNumber) values('" + FillerID.Text + "','" + FillerName.Text + "','" + PhoneNumber.Text + "')";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-                FillerID.Clear();
-                FillerName.Clear();
-                PhoneNumber.Clear();
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            getOilFiller();
+                if (FillerID.Text != "")
+                {
+                    cmd.CommandText = "insert into OilFiller(FillerID,FillerName,PhoneNumber) values('" + FillerID.Text + "','" + FillerName.Text + "','" + PhoneNumber.Text + "')";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                        FillerID.Clear();
+                        FillerName.Clear();
+                        PhoneNumber.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                    }
+                    getOilFiller();
+                }
+                else { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "delete from OilFiller where FillerID='" + FillerID.Text + "'";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-                FillerID.Clear();
-                FillerName.Clear();
-                PhoneNumber.Clear();
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            getOilFiller();
+                cmd.CommandText = "delete from OilFiller where FillerID='" + FillerID.Text + "'";
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                    FillerID.Clear();
+                    FillerName.Clear();
+                    PhoneNumber.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                }
+                getOilFiller();
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void Update_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "Update OilFiller set FillerID='" + FillerID.Text + "',FillerName='" + FillerName.Text + "',PhoneNumber='" + PhoneNumber.Text + "'";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("การแก้ไขข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-                FillerID.Clear();
-                FillerName.Clear();
-                PhoneNumber.Clear();
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการแก้ไชข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            getOilFiller();
+                cmd.CommandText = "Update OilFiller set FillerID='" + FillerID.Text + "',FillerName='" + FillerName.Text + "',PhoneNumber='" + PhoneNumber.Text + "'";
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("การแก้ไขข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                    FillerID.Clear();
+                    FillerName.Clear();
+                    PhoneNumber.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("ไม่มีการแก้ไชข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                }
+                getOilFiller();
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void FillerID_KeyDown(object sender, KeyEventArgs e)

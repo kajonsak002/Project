@@ -85,29 +85,33 @@ namespace Project
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            if (checkMax(decimal.Parse(OilVolumePurchase.Text))) { 
-            cmd.CommandText = "insert into OilPurchase(PurchaseID,OilVolumePurchased,PricePerLiter,PurchaseDate,OilTankID) values('" + PurchaseID.Text + "','" + OilVolumePurchase.Text + "','" + pricePerLiter.Text + "','" + String.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value) + "','" + OilTankID.Text + "')";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                if (checkMax(decimal.Parse(OilVolumePurchase.Text)))
+                {
+                    cmd.CommandText = "insert into OilPurchase(PurchaseID,OilVolumePurchased,PricePerLiter,PurchaseDate,OilTankID) values('" + PurchaseID.Text + "','" + OilVolumePurchase.Text + "','" + pricePerLiter.Text + "','" + String.Format("{0:yyyy-MM-dd}", dateTimePicker1.Value) + "','" + OilTankID.Text + "')";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
 
-                String sql = "update OilTank set CurrentVolume +='" + OilVolumePurchase.Text + "' where TankID = '" + OilTankID.Text + "'";
-                cmd.CommandText = "update OilTank set CurrentVolume +='" + OilVolumePurchase.Text + "' where TankID = '" + OilTankID.Text + "'";
-                cmd.ExecuteNonQuery();
-                PurchaseID.Clear();
-                OilVolumePurchase.Clear();
-                OilTankID.Clear();
-                Console.WriteLine(sql);
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
+                        String sql = "update OilTank set CurrentVolume +='" + OilVolumePurchase.Text + "' where TankID = '" + OilTankID.Text + "'";
+                        cmd.CommandText = "update OilTank set CurrentVolume +='" + OilVolumePurchase.Text + "' where TankID = '" + OilTankID.Text + "'";
+                        cmd.ExecuteNonQuery();
+                        PurchaseID.Clear();
+                        OilVolumePurchase.Clear();
+                        OilTankID.Clear();
+                        Console.WriteLine(sql);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                    }
 
-            showOilPurChase();
-            }
-            else { MessageBox.Show("ความจุน้ำมันไม่พอจะรับ"); }
+                    showOilPurChase();
+                }
+                else { MessageBox.Show("ความจุน้ำมันไม่พอจะรับ"); }
+            }catch(Exception ex) {  MessageBox.Show(ex.Message); }
         }
 
         private Boolean checkMax(decimal i)

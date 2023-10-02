@@ -121,7 +121,7 @@ namespace Project
                     reset();//ท้ายสุด
                 }
                 else { MessageBox.Show("จำนวนน้ำมันไม่เพียงพอ"); }
-            }catch (Exception ex) { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
+            }catch (Exception ex) { MessageBox.Show("กรอกข้อมูลไม่ครบ หรือ เกิดข้อผิดพลาด"); }
             
         }
         private Boolean checkOil(decimal i)
