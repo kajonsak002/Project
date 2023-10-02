@@ -35,7 +35,7 @@ namespace Project
             {
                 int currentSaleID = Convert.ToInt32(result);
                 currentSaleID = currentSaleID + 1;
-                customerCode.Text = currentSaleID.ToString();
+                customerCode.Text = string.Format("{0:D5}",currentSaleID);
             }
         }
         private void getMember()

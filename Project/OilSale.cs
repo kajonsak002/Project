@@ -72,14 +72,14 @@ namespace Project
         }
         private void getDispender()
         {
-            cmd.CommandText = "select * from Dispenser join OilTank on Dispenser.OilTankID = OilTank.TankID join Oil on OilTank.OilID = Oil.OilID";
+            cmd.CommandText = "select DispenserID + OilName as DsOn,DispenserID from Dispenser join OilTank on Dispenser.OilTankID = OilTank.TankID join Oil on OilTank.OilID = Oil.OilID";
             OdbcDataAdapter ad = new OdbcDataAdapter();
             ad.SelectCommand = cmd;
             DataTable table = new DataTable();
             ad.Fill(table);
             bindingSource2.DataSource = table;
             OilName.DataSource = bindingSource2;
-            OilName.DisplayMember = "OilName";
+            OilName.DisplayMember = "DsOn";
             OilName.ValueMember = "DispenserID";
             DispenserID.Text = OilName.SelectedValue.ToString();
             
@@ -99,25 +99,29 @@ namespace Project
         }
         private void Insert_Click(object sender, EventArgs e)
         {
-            if (checkOil(decimal.Parse(LitersSold.Text)))
+            try
             {
-                cmd.CommandText = "insert into OilSale(SaleID,DispenserID,PricePerLiter,MemberID,LitersSold,SaleDate,Tax,PaymentMethod,FillerID) " +
-                "values('" + SaleID.Text + "','" + DispenserID.Text + "','" + PricePerLiter.Text + "','" + MemberID.Text + "','" + LitersSold.Text + "','" +
-                "" + String.Format("{0:yyyy-MM-dd}", SaleDate.Value) + "','"+Tax.Text+"','"+PaymentMethod.SelectedItem+"','"+FillerID.Text+"')";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-            }
-            else
-            {
-                MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-            }
-            addPoint(int.Parse(Total.Text));
-            
-                deCapacity();
-            }
-            else { MessageBox.Show("จำนวนน้ำมันไม่เพียงพอ"); }
+                if (checkOil(decimal.Parse(LitersSold.Text)))
+                {
+                    cmd.CommandText = "insert into OilSale(SaleID,DispenserID,PricePerLiter,MemberID,LitersSold,SaleDate,Tax,PaymentMethod,FillerID) " +
+                    "values('" + SaleID.Text + "','" + DispenserID.Text + "','" + PricePerLiter.Text + "','" + MemberID.Text + "','" + LitersSold.Text + "','" +
+                    "" + String.Format("{0:yyyy-MM-dd}", SaleDate.Value) + "','" + Tax.Text + "','" + PaymentMethod.SelectedItem + "','" + FillerID.Text + "')";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("การเพิ่มข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่มีการเพิ่มข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                    }
+                    addPoint(int.Parse(Total.Text));
+                    deCapacity();
+                    reset();//ท้ายสุด
+                }
+                else { MessageBox.Show("จำนวนน้ำมันไม่เพียงพอ"); }
+            }catch (Exception ex) { MessageBox.Show("กรอกข้อมูลไม่ครบ"); }
             
         }
         private Boolean checkOil(decimal i)
@@ -190,11 +194,11 @@ namespace Project
         }
         private void Sum_Click(object sender, EventArgs e)
         {
-            int tax = int.Parse(Tax.Text);
-            double pricePerLiter = double.Parse(PricePerLiter.Text);
-            int soldPrice = int.Parse(LitersSold.Text) * (int)Math.Floor(pricePerLiter);
-            double total = soldPrice * tax/100 + soldPrice;
-            Total.Text = total.ToString();
+            decimal tax = decimal.Parse(Tax.Text);
+            decimal pricePerLiter = decimal.Parse(PricePerLiter.Text);
+            decimal soldPrice = decimal.Parse(LitersSold.Text) * pricePerLiter;
+            decimal total = soldPrice * tax/100 + soldPrice;
+            Total.Text = String.Format(total.ToString("N2"));
         }
         private void deCapacity()
         {
@@ -203,6 +207,10 @@ namespace Project
             cmd.ExecuteNonQuery();
         }
         private void New_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+        public void reset()
         {
             runningSaaleID();
             MemberName.SelectedIndex = 0;
@@ -213,7 +221,6 @@ namespace Project
             Tax.Clear();
             Total.Clear();
         }
-
         private void PaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -244,6 +251,16 @@ namespace Project
         {
             cmd.CommandText = "update OilSale set PaymentMethod='" + PaymentMethod.SelectedItem + "'where SaleID='" + SaleID.Text + "'";
             cmd.ExecuteNonQuery();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
