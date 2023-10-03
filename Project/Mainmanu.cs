@@ -81,5 +81,50 @@ namespace Project
             Oil.WindowState = FormWindowState.Maximized;
             Oil.Show();
         }
+
+        private void รายงานToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void รายงานการขายนำมนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report Oil = new Report();
+            Oil.MdiParent = this;
+            Oil.WindowState = FormWindowState.Maximized;
+            Oil.Show();
+        }
+
+        private void รายงานสมาชกToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MemberRpt Oil = new MemberRpt();
+            Oil.MdiParent = this;
+            Oil.WindowState = FormWindowState.Maximized;
+            Oil.Show();
+        }
+
+        private void รายงานพนงงานToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FillerRpt Oil = new FillerRpt();
+            Oil.MdiParent = this;
+            Oil.WindowState = FormWindowState.Maximized;
+            Oil.Show();
+        }
+
+        private void รายงานนำมนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OilRpt Oil = new OilRpt();
+            Oil.MdiParent = this;
+            Oil.WindowState = FormWindowState.Maximized;
+            Oil.Show();
+        }
+
+        private void รายงานแทงคนำมนToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OilTankRpt Oil = new OilTankRpt();
+            Oil.MdiParent = this;
+            Oil.WindowState = FormWindowState.Maximized;
+            Oil.Show();
+        }
     }
 }
