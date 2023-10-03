@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,7 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -65,11 +68,23 @@
       <DependentUpon>FillerReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FillerRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FillerRpt.Designer.cs">
+      <DependentUpon>FillerRpt.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemberReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MemberReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MemberRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberRpt.Designer.cs">
+      <DependentUpon>MemberRpt.cs</DependentUpon>
     </Compile>
     <Compile Include="OilSaleReport.cs">
       <AutoGen>True</AutoGen>
@@ -77,12 +92,50 @@
       <DependentUpon>OilSaleReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="RemimingOilReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemimingOilReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+=======
+    <Compile Include="OilReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OilReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OilRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OilRpt.Designer.cs">
+      <DependentUpon>OilRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OilTankReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OilTankReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OilTankRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OilTankRpt.Designer.cs">
+      <DependentUpon>OilTankRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OPurCaseReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPurCaseReport.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+>>>>>>> cf6b7d00e68f682d76b791d63058bad433616ef1
     <Compile Include="การขายน้ำมัน.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,12 +193,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FillerReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="FillerRpt.resx">
+      <DependentUpon>FillerRpt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mainmanu.resx">
       <DependentUpon>Mainmanu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>MemberReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberRpt.resx">
+      <DependentUpon>MemberRpt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Oil.resx">
       <DependentUpon>Oil.cs</DependentUpon>
@@ -156,6 +215,9 @@
     <EmbeddedResource Include="OilPurchase.resx">
       <DependentUpon>OilPurchase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OilRpt.resx">
+      <DependentUpon>OilRpt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OilSale.resx">
       <DependentUpon>OilSale.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +227,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OilTank.resx">
       <DependentUpon>OilTank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OilReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OilReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OilTankReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OilTankReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OilTankRpt.resx">
+      <DependentUpon>OilTankRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OPurCaseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OPurCaseReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,9 +255,14 @@
     <EmbeddedResource Include="registerMember.resx">
       <DependentUpon>registerMember.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="RemimingOilReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RemimingOilReport.cs</LastGenOutput>
+=======
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+>>>>>>> cf6b7d00e68f682d76b791d63058bad433616ef1
     </EmbeddedResource>
     <EmbeddedResource Include="การขายน้ำมัน.resx">
       <DependentUpon>การขายน้ำมัน.cs</DependentUpon>

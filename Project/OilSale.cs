@@ -194,17 +194,23 @@ namespace Project
         }
         private void Sum_Click(object sender, EventArgs e)
         {
-            decimal tax = decimal.Parse(Tax.Text);
-            decimal pricePerLiter = decimal.Parse(PricePerLiter.Text);
-            decimal soldPrice = decimal.Parse(LitersSold.Text) * pricePerLiter;
-            decimal total = soldPrice * tax/100 + soldPrice;
-            Total.Text = String.Format(total.ToString("N2"));
+            try
+            {
+                decimal tax = decimal.Parse(Tax.Text);
+                decimal pricePerLiter = decimal.Parse(PricePerLiter.Text);
+                decimal soldPrice = decimal.Parse(LitersSold.Text) * pricePerLiter;
+                decimal total = soldPrice * tax / 100 + soldPrice;
+                Total.Text = String.Format(total.ToString("N2"));
+            }catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
         private void deCapacity()
         {
-            int lit = int.Parse(LitersSold.Text);
-            cmd.CommandText = "update OilTank set CurrentVolume-='"+lit+"'from OilTank join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID='"+DispenserID.Text+"'";
-            cmd.ExecuteNonQuery();
+            try
+            {
+                int lit = int.Parse(LitersSold.Text);
+                cmd.CommandText = "update OilTank set CurrentVolume-='" + lit + "'from OilTank join Dispenser on OilTank.TankID = Dispenser.OilTankID where DispenserID='" + DispenserID.Text + "'";
+                cmd.ExecuteNonQuery();
+            }catch(Exception ex) { MessageBox.Show(ex.Message ); }
         }
         private void New_Click(object sender, EventArgs e)
         {
@@ -230,12 +236,13 @@ namespace Project
         {
             if (e.KeyCode == Keys.Enter)
             {
-                cmd.CommandText = "select MemberName,OilName,OilSale.PricePerLiter,LitersSold,Tax,PaymentMethod,FillerName from OilSale \r\njoin Member on OilSale.MemberID = Member.MemberID\r\njoin Dispenser on OilSale.DispenserID =Dispenser.DispenserID\r\njoin OilTank on Dispenser.OilTankID = OilTank.TankID\r\njoin Oil on Oil.OilID = OilTank.OilID\r\njoin OilFiller on OilSale.FillerID = OilFiller.FillerID\r\nwhere SaleID ='" + SaleID.Text + "'";
+                cmd.CommandText = "select MemberName,OilSale.DispenserID+OilName,OilSale.PricePerLiter,LitersSold,Tax,PaymentMethod,FillerName from OilSale \r\njoin Member on OilSale.MemberID = Member.MemberID\r\njoin Dispenser on OilSale.DispenserID =Dispenser.DispenserID\r\njoin OilTank on Dispenser.OilTankID = OilTank.TankID\r\njoin Oil on Oil.OilID = OilTank.OilID\r\njoin OilFiller on OilSale.FillerID = OilFiller.FillerID\r\nwhere SaleID ='" + SaleID.Text + "'";
                 OdbcDataReader rs = cmd.ExecuteReader();
+                
                 while (rs.Read())
                 {
                     MemberName.Text = rs.GetString(0);
-                   //OilName.Text = rs.GetString(1);
+                     OilName.Text = rs.GetString(1);
                     
                     LitersSold.Text = rs.GetString(3);
                     Tax.Text = rs.GetString(4);
@@ -250,7 +257,11 @@ namespace Project
         private void Update_Click(object sender, EventArgs e)
         {
             cmd.CommandText = "update OilSale set PaymentMethod='" + PaymentMethod.SelectedItem + "'where SaleID='" + SaleID.Text + "'";
-            cmd.ExecuteNonQuery();
+            int rowsAffected =cmd.ExecuteNonQuery();
+            if(rowsAffected > 0)
+            {
+                MessageBox.Show("success");
+            }
         }
 
         private void Delete_Click(object sender, EventArgs e)
@@ -260,7 +271,12 @@ namespace Project
 
         private void Close_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
 
+            }
         }
     }
 }

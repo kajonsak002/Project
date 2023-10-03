@@ -64,16 +64,19 @@ namespace Project
         }
         private void getOil()
         {
-            cmd.CommandText = "select * from OilTank join Oil on OilTank.OilID = Oil.OilID ";
-            OdbcDataAdapter ad = new OdbcDataAdapter();
-            ad.SelectCommand = cmd;
-            DataTable table = new DataTable();
-            ad.Fill(table);
-            bindingSource1.DataSource = table;
-            OilName.DataSource = bindingSource1;
-            OilName.DisplayMember = "OilName";
-            OilName.ValueMember = "TankID";
-            OilTankID.Text = OilName.SelectedValue.ToString();
+            try
+            {
+                cmd.CommandText = "select TankID+OilName as TON,TankID from OilTank join Oil on OilTank.OilID = Oil.OilID ";
+                OdbcDataAdapter ad = new OdbcDataAdapter();
+                ad.SelectCommand = cmd;
+                DataTable table = new DataTable();
+                ad.Fill(table);
+                bindingSource1.DataSource = table;
+                OilName.DataSource = bindingSource1;
+                OilName.DisplayMember = "TON";
+                OilName.ValueMember = "TankID";
+                OilTankID.Text = OilName.SelectedValue.ToString();
+            }catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
         private void New_Click(object sender, EventArgs e)
         {
@@ -116,6 +119,7 @@ namespace Project
 
         private Boolean checkMax(decimal i)
         {
+            try { 
             cmd.CommandText = "select MaxCapacity,CurrentVolume from  OilTank   where TankID= '" + OilTankID.Text + "'";
             using (OdbcDataReader reader = cmd.ExecuteReader())
             {
@@ -133,6 +137,7 @@ namespace Project
                     }
                 }
             }
+            }catch(Exception ex) {  Console.WriteLine(ex.Message); }
 
             return false; // หากไม่พบข้อมูลในฐานข้อมูล
         }
@@ -175,6 +180,16 @@ namespace Project
         private void OilPurchase_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+
+            }
         }
     }
 }

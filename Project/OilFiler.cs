@@ -84,20 +84,25 @@ namespace Project
         {
             try
             {
-                cmd.CommandText = "delete from OilFiller where FillerID='" + FillerID.Text + "'";
-                int rowsAffected = cmd.ExecuteNonQuery();
-                if (rowsAffected > 0)
+                DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
-                    FillerID.Clear();
-                    FillerName.Clear();
-                    PhoneNumber.Clear();
+
+                    cmd.CommandText = "delete from OilFiller where FillerID='" + FillerID.Text + "'";
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกเพิ่ม");
+                        FillerID.Clear();
+                        FillerName.Clear();
+                        PhoneNumber.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                    }
+                    getOilFiller();
                 }
-                else
-                {
-                    MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-                }
-                getOilFiller();
             }catch(Exception ex) { MessageBox.Show(ex.Message); }
         }
 
@@ -140,6 +145,16 @@ namespace Project
         private void OilFiler_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Close_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+
+            }
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Project
 
         private void OilInventoly()
         {
+           
             cmd.CommandText = "select * from Oil";
             OdbcDataAdapter ad = new OdbcDataAdapter();
             ad.SelectCommand = cmd;
@@ -113,30 +114,39 @@ namespace Project
         {
             try
             {
-                cmd.CommandText = "delete Oil where OilID =" + oilCode.Text;
-                int rowsAffected = cmd.ExecuteNonQuery();
-                if (rowsAffected > 0)
+                DialogResult result = MessageBox.Show("คุณต้องลบข้อมูลหรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกลบ");
+
+                    cmd.CommandText = "delete Oil where OilID =" + oilCode.Text;
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("การลบข้อมูลเสร็จสมบูรณ์: " + rowsAffected + " แถวถูกลบ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
+                    }
+                    oilCode.Clear();
+                    oilName.Clear();
+                    oilPrice.Clear();
+                    //oilVolume.Clear();
+                    Density.Clear();
+                    ChemicalVolume.Clear();
+                    DensityValues.Clear();
+                    OilInventoly();
                 }
-                else
-                {
-                    MessageBox.Show("ไม่มีการลบข้อมูลหรือมีข้อผิดพลาดเกิดขึ้น");
-                }
-                oilCode.Clear();
-                oilName.Clear();
-                oilPrice.Clear();
-                //oilVolume.Clear();
-                Density.Clear();
-                ChemicalVolume.Clear();
-                DensityValues.Clear();
-                OilInventoly();
             }catch(Exception ex) { MessageBox.Show("เกิดข้อผิดพลาดหรือ ไม่ได้กรอกข้อมูล"); }
         }
 
         private void Close_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("คุณต้องปิดฟอร์มนี้หรือไม่?", "ยืนยัน", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void oilCode_KeyDown(object sender, KeyEventArgs e)
