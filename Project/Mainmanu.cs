@@ -73,12 +73,6 @@ namespace Project
             oilPurchase.Show();
         }
 
-        private void รายงานการขายToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            การขายน้ำมัน Oil = new การขายน้ำมัน();
-            Oil.MdiParent = this;
-            Oil.WindowState = FormWindowState.Maximized;
-            Oil.Show();
-        }
+       
     }
 }

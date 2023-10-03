@@ -116,13 +116,6 @@
             this.จดการหวจายToolStripMenuItem.Text = "จัดการหัวจ่าย";
             this.จดการหวจายToolStripMenuItem.Click += new System.EventHandler(this.จดการหวจายToolStripMenuItem_Click);
             // 
-            // รายงานการขายToolStripMenuItem
-            // 
-            this.รายงานการขายToolStripMenuItem.Name = "รายงานการขายToolStripMenuItem";
-            this.รายงานการขายToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
-            this.รายงานการขายToolStripMenuItem.Text = "รายงานการขาย";
-            this.รายงานการขายToolStripMenuItem.Click += new System.EventHandler(this.รายงานการขายToolStripMenuItem_Click);
-            // 
             // Mainmanu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

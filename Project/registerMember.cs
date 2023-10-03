@@ -73,20 +73,20 @@ namespace Project
 
         private void Insert_Click(object sender, EventArgs e)
         {
-            cmd.CommandText = "insert into Member(MemberID,MemberName,PhoneNumber,MemberPoints) values('" + customerCode.Text + "','" + customerName.Text + "','" + customerTel.Text + "','"+0+"')";
-            int rowsAffected = cmd.ExecuteNonQuery();
-            if (rowsAffected > 0)
-            {
-                MessageBox.Show("ทำการสมัครสมาชิกสำเร็จ");
-            }
-            else
-            {
-                MessageBox.Show("ไม่สามารถทำการสมัครสมาชิกได้");
-            }
-            customerCode.Clear();
-            customerName.Clear();
-            customerTel.Clear();
-            getMember();
+                cmd.CommandText = "insert into Member(MemberID,MemberName,PhoneNumber,MemberPoints) values('" + customerCode.Text + "','" + customerName.Text + "','" + customerTel.Text + "','"+0+"')";
+                int rowsAffected = cmd.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("ทำการสมัครสมาชิกสำเร็จ");
+                }
+                else
+                {
+                    MessageBox.Show("ไม่สามารถทำการสมัครสมาชิกได้");
+                }
+                customerCode.Clear();
+                customerName.Clear();
+                customerTel.Clear();
+                getMember();
         }
 
     
@@ -107,7 +107,7 @@ namespace Project
 
         private void Update_Click(object sender, EventArgs e)
         {    
-                cmd.CommandText = "update Member set MemberName='" + customerName.Text + "',PhoneNumber='" + customerTel.Text + "'where MemberID='" + customerCode.Text + "'";
+                cmd.CommandText = "update Member set  MemberID='"+customerCode.Text +"',MemberName='" + customerName.Text + "',PhoneNumber='" + customerTel.Text + "'where MemberID='" + customerCode.Text + "'";
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
